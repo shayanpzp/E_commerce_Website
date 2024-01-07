@@ -40,8 +40,8 @@ Feel free to reach out for any questions or contributions at [shayanpzp1@gmail.c
 
 ---
 
-![GitHub last commit](https://img.shields.io/github/last-commit/shayanpzp/E-commerce-Website)
-![GitHub issues](https://img.shields.io/github/issues/shayanpzp/E-commerce-Website)
-![GitHub stars](https://img.shields.io/github/stars/shayanpzp/E-commerce-Website?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/shayanpzp/E_commerce_Website)
+![GitHub issues](https://img.shields.io/github/issues/shayanpzp/E_commerce_Website)
+![GitHub stars](https://img.shields.io/github/stars/shayanpzp/E_commerce_Website?style=social)
 ![E-commerce Category](https://img.shields.io/badge/category-e--commerce-blue)
 ![Quality](https://img.shields.io/badge/quality-high-green)
