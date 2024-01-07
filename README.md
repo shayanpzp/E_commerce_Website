@@ -1,5 +1,7 @@
 # Online Store Project
 
+<p align="center"> <img src="https://www.zuplic.com/wp-content/uploads/2018/07/eCommerce-Animated-GIF.gif" alt="E-commerce website" /> </p>
+
 ## Overview
 Embark on a journey of building an E-commerce website with Django and Python. This project is designed to create a comprehensive online store system with multiple features catering to different aspects of an e-commerce business.
 
