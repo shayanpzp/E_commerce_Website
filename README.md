@@ -1,5 +1,15 @@
 # Online Store Project
 
+[![Django](https://img.shields.io/badge/Django-5.0-brightgreen?logo=django)](https://www.djangoproject.com/)
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)](https://www.python.org/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple?logo=bootstrap)](https://getbootstrap.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14.2-blue?logo=postgresql)](https://www.postgresql.org/)
+[![jQuery](https://img.shields.io/badge/jQuery-3.6.0-blue?logo=jquery)](https://jquery.com/)
+[![HTML5](https://img.shields.io/badge/HTML-5-orange?logo=html5)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+[![CSS3](https://img.shields.io/badge/CSS-3-blue?logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+[![Redis](https://img.shields.io/badge/Redis-7.0-red?logo=redis)](https://redis.io/)
+
 <p align="center"> <img src="https://www.zuplic.com/wp-content/uploads/2018/07/eCommerce-Animated-GIF.gif" alt="E-commerce website" /> </p>
 
 ## Overview
