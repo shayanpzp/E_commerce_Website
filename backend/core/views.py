@@ -1,20 +1,11 @@
-# from django.shortcuts import render
-from rest_framework import generics,permissions
+from django.shortcuts import render
 from . import serializers
 from . import models
 
 
 
+def index(request): 
+    return render(request, "core/index.html",)
 
 
-class SellerList(generics.ListCreateAPIView): 
-    queryset = models.Seller.objects.all()
-    serializer_class = serializers.SellerSerializer
-    # permission_classes = [permissions.IsAuthenticated]
-    
-    
-class SellerDetails(generics.RetrieveUpdateDestroyAPIView): 
-    queryset = models.Seller.objects.all()
-    serializer_class = serializers.SellerSerializer
-    # permission_classes = [permissions.IsAuthenticated]
     
