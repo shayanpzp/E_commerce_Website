@@ -41,6 +41,7 @@ INSTALLED_APPS = [
         
     #apps
     'core',
+    'customer',
 ]
 
 MIDDLEWARE = [
@@ -147,3 +148,6 @@ JAZZMIN_SETTINGS = {
     'site_logo' : "assets/imgs/theme/loading.gif",
     'copyright' : "WEBAZON.com",
 }
+
+
+AUTH_USER_MODEL = 'customer.User'
