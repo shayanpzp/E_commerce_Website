@@ -27,4 +27,4 @@ def register_view(request):
         'form' : form,
     }
     
-    return render(request, "customer/sign-up.html")
+    return render(request, "customer/sign-up.html", context=context)
