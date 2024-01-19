@@ -17,14 +17,14 @@
                         <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
                             <div class="row">
                                 <div class="col-lg-6 pr-30 d-none d-lg-block">
-                                    <img class="border-radius-15" src="assets/imgs/page/login-1.png" alt="">
+                                    <img class="border-radius-15" src="{% static 'assets/imgs/page/login-1.png' %}" alt="">
                                 </div>
                                 <div class="col-lg-6 col-md-8">
                                     <div class="login_wrap widget-taber-content background-white">
                                         <div class="padding_eight_all bg-white">
                                             <div class="heading_s1">
                                                 <h1 class="mb-5">ورود</h1>
-                                                <p class="mb-30">اکانت ندارید ؟ <a href="page-register.html">ثبت نام کنید</a></p>
+                                                <p class="mb-30">اکانت ندارید ؟ <a href="{% url 'customer:sign-up' %}">ثبت نام کنید</a></p>
                                             </div>
                                             <form method="post">
                                                 {% csrf_token %}
