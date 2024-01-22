@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="entry-content-2 pl-50">
                                         <h3 class="post-title mb-20">
-                                            <a href="blog-post-right.html">{{category.title}}</a>
+                                            <a href="{% url 'core:category_product_list' category.cid %}">{{category.title}}</a>
                                         </h3>
                                         <p class="post-exerpt mb-40">{{category.description}}</p>
                                         <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
@@ -110,7 +110,7 @@
                                                 <span class="post-on">14 تیر 1400</span>
                                                 <span class="hit-count has-dot">{{category.category.count}} product </span>
                                             </div>
-                                            <a href="blog-post-right.html" class="text-brand font-heading font-weight-bold">ادامه مطلب <i class="fi-rs-arrow-left"></i></a>
+                                            <a href="{% url 'core:category_product_list' category.cid %}" class="text-brand font-heading font-weight-bold">ادامه مطلب <i class="fi-rs-arrow-left"></i></a>
                                         </div>
                                     </div>
                                 </article>
