@@ -324,39 +324,13 @@
                                 <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading">
                                     <div class="d-flex categori-dropdown-inner">
                                         <ul>
+                                            {% for category in categories %}
                                             <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-1.svg' %}" alt="">شیر و لبنیات</a>
+                                                <a href="{% url 'core:category_product_list' category.cid %}"> <img src="{{ category.image.url }}" alt="">{{ category.title }}</a>
                                             </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-2.svg' %}" alt="">پوشاک و زیبایی</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-3.svg' %}" alt="">غذا و اسباب بازی حیوانات</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-4.svg' %}" alt="">مواد پخت</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-5.svg' %}" alt="">میوه تازه</a>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
-                                        <ul class="end">
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-6.svg' %}" alt=""> نوشیدنی‌ها</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-7.svg' %}" alt="">غذاهای دریایی</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-8.svg' %}" alt="">فست فود</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-9.svg' %}" alt="">سبزیجات</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-10.svg' %}" alt="">نان و آبمیوه</a> 
-                                            </li>
-                                        </ul>
+                                       
                                     </div>
                                     <div class="more_slide_open" style="display: none">
                                         <div class="d-flex categori-dropdown-inner">
@@ -396,8 +370,17 @@
                                         <li><a href="index-6.html">صفحه اصلی شش</a></li>
                                             </ul>
                                         </li>
+                                        
                                         <li>
-                                            <a href="page-about.html">درباره ما</a>
+                                            <a href="shop-grid-right.html">دسته بندی <i class="fi-rs-angle-down"></i></a>
+                                            <ul class="sub-menu">
+                                                {% for category in categories %}
+                                                <li><a href="{% url 'core:category_product_list' category.cid %}">{{category.title}}</a></li>
+                                                {% endfor %}
+                                                <hr>
+                                                <li><a href="{% url 'core:category_list' %}">All Categories</a></li>
+                                                
+                                            </ul>
                                         </li>
                                         <li>
                                             <a href="shop-grid-right.html">فروشگاه <i class="fi-rs-angle-down"></i></a>
