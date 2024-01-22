@@ -1,0 +1,443 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% block content %}
+
+
+        <main class="main">
+            <div class="page-header breadcrumb-wrap">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <a href="index.html" rel="nofollow">صفحه اصلی<i class="fi-rs-home mr-5"></i></a>
+                        <span></span> فروشگاه <span></span> فیلتر
+                    </div>
+                </div>
+            </div>
+            <div class="container mb-30 mt-30">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a class="shop-filter-toogle" href="#">
+                            <span class="fi-rs-filter mr-5"></span>
+                            فروشگاه - فیلتر
+                            <i class="fi-rs-angle-small-down angle-down"></i>
+                            <i class="fi-rs-angle-small-up angle-up"></i>
+                        </a>
+                        <div class="shop-product-fillter-header">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-6 col-md-6 mb-lg-0 mb-md-2 mb-sm-2">
+                                    <div class="card">
+                                        <h5 class="mb-30">دسته بندی</h5>
+                                        <div class="categories-dropdown-wrap font-heading">
+                                            <ul>
+                                                <li>
+                                                    <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-1.svg" alt="">شیر و لبنیات</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-2.svg" alt="">لباس و زیبایی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-3.svg" alt="">غذای حیوانات</a>
+                                                </li>
+                                                <li class="mb-0">
+                                                    <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-4.svg" alt="">مواد پخت</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 mb-lg-0 mb-md-2 mb-sm-2">
+                                    <div class="card">
+                                        <h5 class="mb-30">فروشنده</h5>
+                                        <div class="d-flex">
+                                            <div class="custome-checkbox mr-80">
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
+                                                <label class="form-check-label" for="exampleCheckbox1"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="">
+                                                <label class="form-check-label" for="exampleCheckbox2"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="">
+                                                <label class="form-check-label" for="exampleCheckbox3"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox4" value="">
+                                                <label class="form-check-label" for="exampleCheckbox4"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox5" value="">
+                                                <label class="form-check-label" for="exampleCheckbox5"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox6" value="">
+                                                <label class="form-check-label" for="exampleCheckbox6"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox7" value="">
+                                                <label class="form-check-label" for="exampleCheckbox7"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox8" value="">
+                                                <label class="form-check-label" for="exampleCheckbox8"><span>طراحان وب</span></label>
+                                            </div>
+                                            <div class="custome-checkbox">
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="">
+                                                <label class="form-check-label" for="exampleCheckbox11"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox21" value="">
+                                                <label class="form-check-label" for="exampleCheckbox21"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox31" value="">
+                                                <label class="form-check-label" for="exampleCheckbox31"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox41" value="">
+                                                <label class="form-check-label" for="exampleCheckbox41"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox51" value="">
+                                                <label class="form-check-label" for="exampleCheckbox51"><span>طراحان وب</span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox61" value="">
+                                                <label class="form-check-label" for="exampleCheckbox61"><span>طراحان وب</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 mb-lg-0 mb-md-2 mb-sm-2">
+                                    <div class="card">
+                                        <h5 class="mb-30">برچسب</h5>
+                                        <div class="sidebar-widget widget-tags">
+                                            <ul class="tags-list">
+                                                <li class="hover-up">
+                                                    <a href="blog-category-grid.html"><i class="fi-rs-cross mr-10"></i>شیر</a>
+                                                </li>
+                                                <li class="hover-up">
+                                                    <a href="blog-category-grid.html"><i class="fi-rs-cross mr-10"></i>کلم بروکلی</a>
+                                                </li>
+                                                <li class="hover-up">
+                                                    <a href="blog-category-grid.html"><i class="fi-rs-cross mr-10"></i>اسموتی</a>
+                                                </li>
+                                                <li class="hover-up">
+                                                    <a href="blog-category-grid.html"><i class="fi-rs-cross mr-10"></i>میوه</a>
+                                                </li>
+                                                <li class="hover-up mr-0">
+                                                    <a href="blog-category-grid.html"><i class="fi-rs-cross mr-10"></i>سالاد</a>
+                                                </li>
+                                                <li class="hover-up mr-0">
+                                                    <a href="blog-category-grid.html"><i class="fi-rs-cross mr-10"></i>پیش غذا</a>
+                                                </li>
+                                                <li class="hover-up mr-0 mb-0">
+                                                    <a href="blog-category-grid.html"><i class="fi-rs-cross mr-10"></i>پیش غذا</a> 
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 mb-lg-0 mb-md-5 mb-sm-5">
+                                    <div class="card">
+                                        <h5 class="mb-10">خرید</h5>
+                                        <div class="sidebar-widget price_range range">
+                                            <div class="price-filter mb-20">
+                                                <div class="price-filter-inner">
+                                                    <div id="slider-range" class="mb-20"></div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <div class="caption">از: <strong id="slider-range-value1" class="text-brand"></strong></div>
+                                                        <div class="caption">تا: <strong id="slider-range-value2" class="text-brand"></strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="custome-checkbox">
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox211" value="">
+                                                <label class="form-check-label" for="exampleCheckbox211"><span>0.00 - 20.000 </span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox22" value="">
+                                                <label class="form-check-label" for="exampleCheckbox22"><span>20.000 - 40.000 </span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox23" value="">
+                                                <label class="form-check-label" for="exampleCheckbox23"><span>40.000 - 60.000 </span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox24" value="">
+                                                <label class="form-check-label" for="exampleCheckbox24"><span>60.000 - 80.000 </span></label>
+                                                <br>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox25" value="">
+                                                <label class="form-check-label" for="exampleCheckbox25"><span>بیشتر از 100.000</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="shop-product-fillter">
+                            <div class="totall-product">
+                                <p>در سبدخرید شما <strong class="text-brand">29</strong> محصول یافت شد</p>
+                            </div>
+                            <div class="sort-by-product-area">
+                                <div class="sort-by-cover mr-10">
+                                    <div class="sort-by-product-wrap">
+                                        <div class="sort-by">
+                                            <span>نمایش:<i class="fi-rs-apps"></i></span>
+                                        </div>
+                                        <div class="sort-by-dropdown-wrap">
+                                            <span> 50 <i class="fi-rs-angle-small-down"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="sort-by-dropdown">
+                                        <ul>
+                                            <li><a class="active" href="#">50</a></li>
+                                            <li><a href="#">100</a></li>
+                                            <li><a href="#">150</a></li>
+                                            <li><a href="#">200</a></li>
+                                            <li><a href="#">همه</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sort-by-cover">
+                                    <div class="sort-by-product-wrap">
+                                        <div class="sort-by">
+                                            <span>مرتب سازی:<i class="fi-rs-apps-sort"></i></span>
+                                        </div>
+                                        <div class="sort-by-dropdown-wrap">
+                                            <span> <i class="fi-rs-angle-small-down"></i> ویژه</span>
+                                        </div>
+                                    </div>
+                                    <div class="sort-by-dropdown">
+                                        <ul>
+                                            <li><a class="active" href="#">ویژه ها</a></li>
+                                            <li><a href="#">قیمت: کم به زیاد</a></li>
+                                            <li><a href="#">قیمت: زیاد به کم</a></li>
+                                            <li><a href="#">تاریخ به روزرسانی</a></li>
+                                            <li><a href="#">رتبه بندی</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row product-grid">
+
+
+                        {% for product in products %}
+                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{{ product.image.url }}" alt="">
+                                            <img class="hover-img" src="{{ product.image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-action-1">
+                                        <a aria-label="علاقه مندی" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                        <a aria-label="مقایسه" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                        <a aria-label="مشاهده سریع" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
+                                    </div>
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                        <span class="hot">-{{ product.get_percentage|floatformat:0 }}%</span>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="shop-grid-right.html">{{ p.category.title }}</a>
+                                    </div>
+                                    <h2><a href="shop-product-right.html">{{ product.title }}</a></h2>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">{{ product.vendor.title }}</a></span>
+                                    </div>
+                                    <div class="product-card-bottom">
+                                        <div class="product-price">
+                                            <span>{{ product.price }}</span>
+                                            <span class="old-price">{{ product.old_price }}</span>
+                                        </div>
+                                        <div class="add-cart">
+                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        {% endfor %}
+                        </div>
+                        {% comment %} <!--product grid-->
+                        <div class="pagination-area mt-20 mb-20">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-start">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><i class="fi-rs-arrow-small-right"></i></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><i class="fi-rs-arrow-small-left"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div> {% endcomment %}
+                        <section class="section-padding pb-5">
+                            <div class="section-title">
+                                <h3 class="">معاملات روز</h3>
+                        <a class="show-all" href="shop-grid-right.html">
+                            <i class="fi-rs-angle-left"></i>
+                            تمامی معاملات
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay="0">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img">
+                                        <a href="shop-product-right.html">
+                                            <img src="assets/imgs/banner/banner-5.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="deals-countdown-wrap">
+                                        <div class="deals-countdown" data-countdown="2025/03/25 00:00:00"></div>
+                                    </div>
+                                    <div class="deals-content">
+                                        <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
+                                        <div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width: 90%"></div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="product-price">
+                                                <span>32.000</span>
+                                                <span class="old-price">33.000</span>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img">
+                                        <a href="shop-product-right.html">
+                                            <img src="assets/imgs/banner/banner-6.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="deals-countdown-wrap">
+                                        <div class="deals-countdown" data-countdown="2026/04/25 00:00:00"></div>
+                                    </div>
+                                    <div class="deals-content">
+                                        <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
+                                        <div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width: 90%"></div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="product-price">
+                                                <span>32.000</span>
+                                                <span class="old-price">33.000</span>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 d-none d-lg-block">
+                            <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img">
+                                        <a href="shop-product-right.html">
+                                            <img src="assets/imgs/banner/banner-7.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="deals-countdown-wrap">
+                                        <div class="deals-countdown" data-countdown="2027/03/25 00:00:00"></div>
+                                    </div>
+                                    <div class="deals-content">
+                                        <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
+                                        <div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width: 90%"></div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="product-price">
+                                                <span>32.000</span>
+                                                <span class="old-price">33.000</span>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 d-none d-xl-block">
+                            <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img">
+                                        <a href="shop-product-right.html">
+                                            <img src="assets/imgs/banner/banner-8.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="deals-countdown-wrap">
+                                        <div class="deals-countdown" data-countdown="2025/02/25 00:00:00"></div>
+                                    </div>
+                                    <div class="deals-content">
+                                        <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
+                                        <div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width: 90%"></div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="product-price">
+                                                <span>32.000</span>
+                                                <span class="old-price">33.000</span>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--End Deals-->
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock content %}
