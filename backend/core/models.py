@@ -75,6 +75,8 @@ class Vendor(models.Model):
     
     #ForeignKey
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    date = models.DateField(auto_now_add=True, null=True, blank=True)
+    mall = models.CharField(max_length=100, default="مرکز خرید")
     
     class Meta:
         verbose_name_plural = "Vendors"
@@ -96,7 +98,7 @@ class Product(models.Model):
     #ForeignKey
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name="category") 
-    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
+    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True, related_name="product")
     
     #base fields
     title = models.CharField(max_length=100, default="Fresh Pear")
