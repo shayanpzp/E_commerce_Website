@@ -44,6 +44,7 @@ class Category(models.Model):
     #base fields
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to="category")
+    description = models.TextField(null=True, blank=True, default="The Best Category.")
     
     class Meta:
         verbose_name_plural = "Categories"
@@ -94,7 +95,7 @@ class Product(models.Model):
     
     #ForeignKey
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name="category") 
     vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
     
     #base fields
