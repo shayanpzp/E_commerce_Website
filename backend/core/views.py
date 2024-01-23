@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . import serializers
 from . import models
 from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImage, ProductReview, Wishlist, Address    
@@ -79,5 +79,14 @@ def vendor_detail_view(request, vid):
 
     
     
+def product_detail_view(request, pid):
+    product = Product.objects.get(pid=pid)      
+    product_image = product.product_images.all()
     
+    context = {
+        "product" : product,
+        "product_image" : product_image,
+        
+    }
+    return render(request, "core/product_detail.html", context)
     

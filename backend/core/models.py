@@ -68,7 +68,7 @@ class Vendor(models.Model):
     
     address = models.CharField(max_length=100, default="123 Main Street.")
     contact = models.CharField(max_length=100, default="+123 (456) 789")
-    chat_resp_time = models.CharField(max_length=100, default="100")
+    chat_resp_time = models.CharField(max_length=100, default="88")
     shipping_on_time = models.CharField(max_length=100, default="100")
     authentic_rating = models.CharField(max_length=100, default="100")
     days_return = models.CharField(max_length=100, default="100")
@@ -110,6 +110,10 @@ class Product(models.Model):
     old_price = models.DecimalField(max_digits=9999999999999, decimal_places=2, default="2.99")
     
     specifications = models.TextField(null=True, blank=True)
+    type = models.CharField(max_length=100, default="کارکرده", null=True, blank=True)
+    stock_count = models.CharField(max_length=100, default="۸ ایتم", null=True, blank=True)
+    life = models.CharField(max_length=100, default="100 روز ", null=True, blank=True)
+    mfd = models.DateTimeField(auto_now_add=False, null=True, blank=True)
     # tags = models.ForeignKey(Tags, on_delete=models.SET_NULL, null=True)
     
     product_status = models.CharField(choices=STATUS, max_length=10, default="in_review")
@@ -144,8 +148,8 @@ class Product(models.Model):
     
     
 class ProductImage(models.Model):
-    image = models.ImageField(upload_to="product-images", default="product.jpg")
-    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    images = models.ImageField(upload_to="product-images", default="product.jpg")
+    product = models.ForeignKey(Product, related_name="product_images", on_delete=models.SET_NULL, null=True)
     date = models.DateField(auto_now_add=True)
     
     
