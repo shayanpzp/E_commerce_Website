@@ -392,18 +392,22 @@
                                 </div>
                             </div>
                             <div class="row mt-60">
+                                {% if products %}
                                 <div class="col-12">
                                     <h2 class="section-title style-1 mb-30">محصولات مشابه</h2>
                                 </div>
+                                {% endif %}
                                 <div class="col-12">
                                     <div class="row related-products">
+
+                                        {% for product in products %}
                                         <div class="col-lg-3 col-md-4 col-12 col-sm-6">
                                             <div class="product-cart-wrap hover-up">
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
-                                                        <a href="shop-product-right.html" tabindex="0">
-                                                            <img class="default-img" src="{% static 'assets/imgs/shop/product-2-1.jpg' %}" alt="">
-                                                            <img class="hover-img" src="{% static 'assets/imgs/shop/product-2-2.jpg' %}" alt="">
+                                                        <a href="{% url 'core:product_detail' product.pid %}" tabindex="0">
+                                                            <img class="default-img" src="{{product.image.url}}" alt="">
+                                                            <img class="hover-img" src="{{product.image.url}}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action-1">
@@ -416,109 +420,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-content-wrap">
-                                                    <h2><a href="shop-product-right.html" tabindex="0">محصول طراحان وب</a></h2>
+                                                    <h2><a href="{% url 'core:product_detail' product.pid %}" tabindex="0">{{ product.title }}</a></h2>
                                                     <div class="rating-result" title="90%">
                                                         <span> </span>
                                                     </div>
                                                     <div class="product-price">
-                                                        <span>238.000 </span>
-                                                        <span class="old-price">245.000</span>
+                                                        <span>{{product.price}} </span>
+                                                        <span class="old-price">{{product.old_price}}</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                            <div class="product-cart-wrap hover-up">
-                                                <div class="product-img-action-wrap">
-                                                    <div class="product-img product-img-zoom">
-                                                        <a href="shop-product-right.html" tabindex="0">
-                                                            <img class="default-img" src="{% static 'assets/imgs/shop/product-3-1.jpg' %}" alt="">
-                                                            <img class="hover-img" src="{% static 'assets/imgs/shop/product-4-2.jpg' %}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-action-1">
-                                                        <a aria-label="مشاهده سریع" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-search"></i></a>
-                                                        <a aria-label="علاقه مندی" class="action-btn small hover-up" href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                        <a aria-label="مقایسه" class="action-btn small hover-up" href="shop-compare.html" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                    </div>
-                                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                                        <span class="sale">12%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content-wrap">
-                                                    <h2><a href="shop-product-right.html" tabindex="0">محصول طراحان وب</a></h2>
-                                                    <div class="rating-result" title="90%">
-                                                        <span> </span>
-                                                    </div>
-                                                    <div class="product-price">
-                                                        <span>138.000 </span>
-                                                        <span class="old-price">145.000</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                            <div class="product-cart-wrap hover-up">
-                                                <div class="product-img-action-wrap">
-                                                    <div class="product-img product-img-zoom">
-                                                        <a href="shop-product-right.html" tabindex="0">
-                                                            <img class="default-img" src="{% static 'assets/imgs/shop/product-4-1.jpg' %}" alt="">
-                                                            <img class="hover-img" src="{% static 'assets/imgs/shop/product-4-2.jpg' %}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-action-1">
-                                                        <a aria-label="مشاهده سریع" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-search"></i></a>
-                                                        <a aria-label="علاقه مندی" class="action-btn small hover-up" href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                        <a aria-label="مقایسه" class="action-btn small hover-up" href="shop-compare.html" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                    </div>
-                                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                                        <span class="new">جدید</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content-wrap">
-                                                    <h2><a href="shop-product-right.html" tabindex="0">محصول طراحان وب</a></h2>
-                                                    <div class="rating-result" title="90%">
-                                                        <span> </span>
-                                                    </div>
-                                                    <div class="product-price">
-                                                        <span>738.000 </span>
-                                                        <span class="old-price">830.000</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-4 col-12 col-sm-6 d-lg-block d-none">
-                                            <div class="product-cart-wrap hover-up mb-0">
-                                                <div class="product-img-action-wrap">
-                                                    <div class="product-img product-img-zoom">
-                                                        <a href="shop-product-right.html" tabindex="0">
-                                                            <img class="default-img" src="{% static 'assets/imgs/shop/product-5-1.jpg' %}" alt="">
-                                                            <img class="hover-img" src="{% static 'assets/imgs/shop/product-3-2.jpg' %}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-action-1">
-                                                        <a aria-label="مشاهده سریع" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-search"></i></a>
-                                                        <a aria-label="علاقه مندی" class="action-btn small hover-up" href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                        <a aria-label="مقایسه" class="action-btn small hover-up" href="shop-compare.html" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                    </div>
-                                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                                        <span class="hot">داغ</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content-wrap">
-                                                    <h2><a href="shop-product-right.html" tabindex="0">محصول طراحان وب</a></h2>
-                                                    <div class="rating-result" title="90%">
-                                                        <span> </span>
-                                                    </div>
-                                                    <div class="product-price">
-                                                        <span>89.000 </span>
-                                                        <span class="old-price">98.000</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {% endfor %}
+
                                     </div>
                                 </div>
                             </div>

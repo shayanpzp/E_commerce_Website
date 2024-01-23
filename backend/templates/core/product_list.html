@@ -214,7 +214,7 @@
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a href="{% url 'core:product_detail' product.pid %}">
                                             <img class="default-img" src="{{ product.image.url }}" alt="">
                                             <img class="hover-img" src="{{ product.image.url }}" alt="">
                                         </a>
@@ -230,7 +230,7 @@
                                 </div>
                                 <div class="product-content-wrap">
                                     <div class="product-category">
-                                        <a href="shop-grid-right.html">{{ p.category.title }}</a>
+                                        <a hre{% url 'core:product_detail' product.pid %}">{{ p.category.title }}</a>
                                     </div>
                                     <h2><a href="shop-product-right.html">{{ product.title }}</a></h2>
                                     <div class="product-rate-cover">

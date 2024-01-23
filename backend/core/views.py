@@ -80,13 +80,16 @@ def vendor_detail_view(request, vid):
     
     
 def product_detail_view(request, pid):
-    product = Product.objects.get(pid=pid)      
+    product = Product.objects.get(pid=pid)  
+    products = Product.objects.filter(category=product.category).exclude(pid=pid)
+    
+        
     product_image = product.product_images.all()
     
     context = {
         "product" : product,
         "product_image" : product_image,
-        
+        "products" : products,
     }
     return render(request, "core/product_detail.html", context)
     
