@@ -35,6 +35,12 @@ Embark on a journey of building an E-commerce website with Django and Python. Th
 4. **Core App**: Base models, views, and common functionalities across the project.
 5. **Admin Panel**: Customized Django admin panel for managing products, customers, orders, and more.
 
+## 📐 ERD Overview
+
+Our project is structured around a comprehensive Entity Relationship Diagram (ERD) that defines the relationships between various components like Users, Staff, Items, Orders, and more.
+
+<p align="center"> <img src="backend\static\erd.WEBP" alt="Online_Store_Project_pzp"/> </p>
+
 ## How to Use
 1. Clone the repo: `git clone https://github.com/shayanpzp/E-commerce-Website.git`
 2. Install dependencies: `pip install -r requirements.txt`
