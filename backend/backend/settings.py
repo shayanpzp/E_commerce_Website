@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-        
+    
+    'rest_framework',   
+    
     #apps
     'core',
     'customer',
@@ -152,3 +154,12 @@ JAZZMIN_SETTINGS = {
 
 
 AUTH_USER_MODEL = 'customer.User'
+
+
+
+EMAIL_BACKEND = 'django.core.backends.smtp.EmailBackend'
+EMAI_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'EMAIL'
+EMAIL_HOST_PASSWORD = 'PASSWORD'
