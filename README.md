@@ -1,4 +1,4 @@
-# Online Store Project
+# Online Store Project 🧌
 
 [![Django](https://img.shields.io/badge/Django-5.0-brightgreen?logo=django)](https://www.djangoproject.com/)
 [![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)](https://www.python.org/)
@@ -12,17 +12,17 @@
 
 <p align="center"> <img src="https://www.zuplic.com/wp-content/uploads/2018/07/eCommerce-Animated-GIF.gif" alt="E-commerce website" /> </p>
 
-## Overview
+## Overview 🗒️
 Embark on a journey of building an E-commerce website with Django and Python. This project is designed to create a comprehensive online store system with multiple features catering to different aspects of an e-commerce business.
 
-## Features
+## Features 🗿
 - **Customer Management**: Efficient handling of customer data, addresses, and personal information.
 - **Product Catalog**: Manage an extensive range of products, with details like brand, specifications, and stock.
 - **Order Processing**: Facilitate shopping carts and order management with a focus on user experience.
 - **Discounts & Promotions**: Implement percentage and cash discounts, including special discount codes.
 - **Responsive Design**: Ensure a seamless shopping experience across all devices.
 
-## Technology Stack
+## Technology Stack 🖥️
 - **Back-End**: Django/Python
 - **Database**: SQLite (for Development), PostgreSQL (for Production)
 - **Front-End**: HTML, CSS, JavaScript, Bootstrap, jQuery
@@ -53,7 +53,7 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
-## Contact
+## Contact ☎️
 Feel free to reach out for any questions or contributions at [shayanpzp1@gmail.com](mailto:shayanpzp1@gmail.com).
 
 ---
