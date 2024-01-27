@@ -96,7 +96,7 @@
                                             </ul>
                                             <ul class="float-start">
                                                 <li class="mb-5">شناسه: <a href="#">{{product.sku}}</a></li>
-                                                <li class="mb-5">برچسب: <a href="#" rel="tag">اسنک</a>, <a href="#" rel="tag">ارگانیک</a>, <a href="#" rel="tag">سبز</a></li>
+                                                <li class="mb-5">برچسب: {% for tag in product.tags.all %} <a href="{% url 'core:tags' tag.slug %}" rel="tag">{{tag.name}}</a>,{% endfor %}</li>
                                                 <li>موجودی:<span class="in-stock text-brand ml-5">{{product.stock_count}} عدد</span></li>
                                             </ul>
                                         </div>

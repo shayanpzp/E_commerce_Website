@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from . import serializers
 from . import models
-from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImage, ProductReview, Wishlist, Address    
+from taggit.models import Tag
+from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImage, ProductReview, Wishlist, Address
 from django.db.models import Count
 
 
@@ -92,4 +93,19 @@ def product_detail_view(request, pid):
         "products" : products,
     }
     return render(request, "core/product_detail.html", context)
+
+
+def tag_list(request, tag_slug=None):
+    products = Product.objects.filter(product_status="published").order_by("-id")
     
+    tag =None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        products = products.filter(tags__in=[tag])
+        
+    context = {
+        "products" : products,
+        "tag" : tag,
+    }
+    
+    return render(request, "core/tag.html", context)
