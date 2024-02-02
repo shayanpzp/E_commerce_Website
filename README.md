@@ -39,7 +39,7 @@ Embark on a journey of building an E-commerce website with Django and Python. Th
 
 Our project is structured around a comprehensive Entity Relationship Diagram (ERD) that defines the relationships between various components like Users, Staff, Items, Orders, and more.
 
-<p align="center"> <img src="backend\static\erd.WEBP" alt="Online_Store_Project_pzp"/> </p>
+<p align="center"> <img src="backend\static\erd2.WEBP" alt="Online_Store_Project_pzp"/> </p>
 
 ## How to Use
 1. Clone the repo: `git clone https://github.com/shayanpzp/E-commerce-Website.git`
