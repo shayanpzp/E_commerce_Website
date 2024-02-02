@@ -10,6 +10,7 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageAdmin]
     list_display = ['user', 'title', 'product_image', 'price', 'vendor', 'category', 'featured', 'product_status', 'pid']
     list_filter =  ['user' , 'title']
+    list_editable = ['vendor']
     sortable_by =  ['price']
     
 class CategoryAdmin(admin.ModelAdmin):
