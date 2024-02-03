@@ -117,7 +117,7 @@
                                              <a class="nav-link" id="Vendor-info-tab" data-bs-toggle="tab" href="#Vendor-info">فروشنده</a>
                                          </li>
                                          <li class="nav-item">
-                                             <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">نظرات (3)</a> 
+                                             <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">نظرات ({{reviews.count}})</a> 
                                         </li>
                                     </ul>
                                     <div class="tab-content shop_info_tab entry-main-content">
@@ -260,63 +260,29 @@
                                                     <div class="col-lg-8">
                                                         <h4 class="mb-30">نظرات</h4>
                                                         <div class="comment-list">
+                                                            {% for review in reviews %}
                                                             <div class="single-comment justify-content-between d-flex mb-30">
+                                                                
                                                                 <div class="user justify-content-between d-flex">
                                                                     <div class="thumb text-center">
-                                                                        <img src="{% static 'assets/imgs/blog/author-2.png' %}" alt="">
-                                                                        <a href="#" class="font-heading text-brand">طراحان وب</a>
+                                                                        <img src="https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="">
+                                                                        <a href="#" class="font-heading text-brand">{{review.user.username|title}}</a>
                                                                     </div>
                                                                     <div class="desc">
                                                                         <div class="d-flex justify-content-between mb-10">
                                                                             <div class="d-flex align-items-center">
-                                                                                <span class="font-xs text-muted">14 تیر 1400 ساعت 3:00 ظهر </span>
+                                                                                <span class="font-xs text-muted">{{review.date}}</span>
                                                                             </div>
                                                                             <div class="product-rate d-inline-block">
                                                                                 <div class="product-rating" style="width: 100%"></div>
                                                                             </div>
                                                                         </div>
-                                                                        <p class="mb-10">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. <a href="#" class="reply">پاسخ</a></p>
+                                                                        <p class="mb-10">{{review.review}} </p>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="single-comment justify-content-between d-flex mb-30 ml-30">
-                                                                <div class="user justify-content-between d-flex">
-                                                                    <div class="thumb text-center">
-                                                                        <img src="{% static 'assets/imgs/blog/author-3.png' %}" alt="">
-                                                                        <a href="#" class="font-heading text-brand">طراحان وب</a>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div class="d-flex justify-content-between mb-10">
-                                                                            <div class="d-flex align-items-center">
-                                                                                <span class="font-xs text-muted">14 تیر 1400 ساعت 3:00 ظهر </span>
-                                                                            </div>
-                                                                            <div class="product-rate d-inline-block">
-                                                                                <div class="product-rating" style="width: 100%"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="mb-10">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. <a href="#" class="reply">پاسخ</a></p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="single-comment justify-content-between d-flex">
-                                                                <div class="user justify-content-between d-flex">
-                                                                    <div class="thumb text-center">
-                                                                        <img src="{% static 'assets/imgs/blog/author-4.png' %}" alt="">
-                                                                        <a href="#" class="font-heading text-brand">طراحان وب</a>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div class="d-flex justify-content-between mb-10">
-                                                                            <div class="d-flex align-items-center">
-                                                                                <span class="font-xs text-muted">14 تیر 1400 ساعت 3:00 ظهر </span>
-                                                                            </div>
-                                                                            <div class="product-rate d-inline-block">
-                                                                                <div class="product-rating" style="width: 100%"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="mb-10">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. <a href="#" class="reply">پاسخ</a></p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            {% endfor %}
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
@@ -325,7 +291,7 @@
                                                             <div class="product-rate d-inline-block mr-15">
                                                                 <div class="product-rating" style="width: 90%"></div>
                                                             </div>
-                                                            <h6>4.8 از 5</h6>
+                                                            <h6>{{ average_rating.rating|floatformat:2 }} از 5</h6>
                                                         </div>
                                                         <div class="progress">
                                                             <span>5 </span>

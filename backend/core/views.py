@@ -3,7 +3,7 @@ from . import serializers
 from . import models
 from taggit.models import Tag
 from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImage, ProductReview, Wishlist, Address
-from django.db.models import Count
+from django.db.models import Count,Avg
 
 
 def index(request): 
@@ -84,12 +84,17 @@ def product_detail_view(request, pid):
     product = Product.objects.get(pid=pid)  
     products = Product.objects.filter(category=product.category).exclude(pid=pid)
     
+    reviews = ProductReview.objects.filter(product=product).order_by("-date")
+    
+    average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
         
     product_image = product.product_images.all()
     
     context = {
         "product" : product,
         "product_image" : product_image,
+        "average_rating" : average_rating,
+        "reviews" : reviews,
         "products" : products,
     }
     return render(request, "core/product_detail.html", context)
