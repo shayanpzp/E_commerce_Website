@@ -179,3 +179,19 @@ EMAIL_PORT = 587
 
 
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_CONFIG = {
+    'default' : {
+        'skin' : 'moono',
+        'codeSnippet_theme' : 'monokai',
+        'toolbar' : 'all',
+        'extraPlugins' : ','.join(
+            [
+                'codesnippet',
+                'widget',
+                'dialog'
+            ]
+        ),
+    }
+}

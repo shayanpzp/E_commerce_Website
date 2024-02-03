@@ -2,13 +2,12 @@ from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, Pr
 
 def default(request):
     categories = Category.objects.all()
-    address = None 
 
     if request.user.is_authenticated:
         try:
             address = Address.objects.get(user=request.user)
         except Address.DoesNotExist:
-            pass
+            address = None 
     
     return {
         "categories" : categories,
