@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #third-party app
     'rest_framework',   
     'taggit', 
+    'ckeditor',
     
     #apps
     'core',
@@ -174,4 +175,7 @@ EMAIL_PORT = 587
 # EMAIL_USE_TLS = True  # Use TLS encryption (or False if not needed)
 # EMAIL_HOST_USER = 'your-email@example.com'  # Replace with your email address
 # EMAIL_HOST_PASSWORD = 'your-email-password'  # Replace with your email password
+
+
+
 
