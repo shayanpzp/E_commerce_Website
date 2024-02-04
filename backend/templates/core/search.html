@@ -1,0 +1,308 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+        <main class="main">
+            <div class="page-header mt-30 mb-50">
+                <div class="container">
+                    <div class="archive-header">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3">
+
+                                {% if query %}
+                                <h2 class="mb-15">{{query}}</h2>
+                                {% else %}
+                                <h3 class="mb-15">جستوجویی یافت نشد !</h3>
+                                {% endif %}
+
+                                <div class="breadcrumb">
+                                    <a href="index.html" rel="nofollow">صفحه اصلی<i class="fi-rs-home mr-5"></i></a>
+                                    <span></span> فروشگاه <span></span> {{query}}
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mb-30">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="shop-product-fillter">
+                            <div class="totall-product">
+                                <p>در سبدخرید شما <strong class="text-brand">{{products.count}}</strong> محصول یافت شد</p>
+                            </div>
+                            <div class="sort-by-product-area">
+                                <div class="sort-by-cover mr-10">
+                                    <div class="sort-by-product-wrap">
+                                        <div class="sort-by">
+                                            <span>نمایش:<i class="fi-rs-apps"></i></span>
+                                        </div>
+                                        <div class="sort-by-dropdown-wrap">
+                                            <span> 50 <i class="fi-rs-angle-small-down"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="sort-by-dropdown">
+                                        <ul>
+                                            <li><a class="active" href="#">50</a></li>
+                                            <li><a href="#">100</a></li>
+                                            <li><a href="#">150</a></li>
+                                            <li><a href="#">200</a></li>
+                                            <li><a href="#">همه</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sort-by-cover">
+                                    <div class="sort-by-product-wrap">
+                                        <div class="sort-by">
+                                            <span>مرتب سازی:<i class="fi-rs-apps-sort"></i></span>
+                                        </div>
+                                        <div class="sort-by-dropdown-wrap">
+                                            <span> <i class="fi-rs-angle-small-down"></i> ویژه</span>
+                                        </div>
+                                    </div>
+                                    <div class="sort-by-dropdown">
+                                        <ul>
+                                            <li><a class="active" href="#">ویژه ها</a></li>
+                                            <li><a href="#">قیمت: کم به زیاد</a></li>
+                                            <li><a href="#">قیمت: زیاد به کم</a></li>
+                                            <li><a href="#">تاریخ به روزرسانی</a></li>
+                                            <li><a href="#">رتبه بندی</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% for product in products %}
+                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{{ product.image.url }}" alt="">
+                                            <img class="hover-img" src="{{ product.image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-action-1">
+                                        <a aria-label="علاقه مندی" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                        <a aria-label="مقایسه" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                        <a aria-label="مشاهده سریع" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
+                                    </div>
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                        <span class="hot">-{{ product.get_percentage|floatformat:0 }}%</span>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="shop-grid-right.html">{{ p.category.title }}</a>
+                                    </div>
+                                    <h2><a href="shop-product-right.html">{{ product.title }}</a></h2>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">{{ product.vendor.title }}</a></span>
+                                    </div>
+                                    <div class="product-card-bottom">
+                                        <div class="product-price">
+                                            <span>{{ product.price }}</span>
+                                            <span class="old-price">{{ product.old_price }}</span>
+                                        </div>
+                                        <div class="add-cart">
+                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!--product grid-->
+                        <div class="pagination-area mt-20 mb-20">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-start">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><i class="fi-rs-arrow-small-right"></i></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><i class="fi-rs-arrow-small-left"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <section class="section-padding pb-5">
+                            <div class="section-title">
+                                <h3 class="">معاملات روز</h3>
+                        <a class="show-all" href="shop-grid-right.html">
+                            <i class="fi-rs-angle-left"></i>
+                            تمامی معاملات
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay="0">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img">
+                                        <a href="shop-product-right.html">
+                                            <img src="assets/imgs/banner/banner-5.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="deals-countdown-wrap">
+                                        <div class="deals-countdown" data-countdown="2025/03/25 00:00:00"></div>
+                                    </div>
+                                    <div class="deals-content">
+                                        <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
+                                        <div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width: 90%"></div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="product-price">
+                                                <span>32.000</span>
+                                                <span class="old-price">33.000</span>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img">
+                                        <a href="shop-product-right.html">
+                                            <img src="assets/imgs/banner/banner-6.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="deals-countdown-wrap">
+                                        <div class="deals-countdown" data-countdown="2026/04/25 00:00:00"></div>
+                                    </div>
+                                    <div class="deals-content">
+                                        <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
+                                        <div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width: 90%"></div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="product-price">
+                                                <span>32.000</span>
+                                                <span class="old-price">33.000</span>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 d-none d-lg-block">
+                            <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img">
+                                        <a href="shop-product-right.html">
+                                            <img src="assets/imgs/banner/banner-7.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="deals-countdown-wrap">
+                                        <div class="deals-countdown" data-countdown="2027/03/25 00:00:00"></div>
+                                    </div>
+                                    <div class="deals-content">
+                                        <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
+                                        <div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width: 90%"></div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="product-price">
+                                                <span>32.000</span>
+                                                <span class="old-price">33.000</span>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 d-none d-xl-block">
+                            <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img">
+                                        <a href="shop-product-right.html">
+                                            <img src="assets/imgs/banner/banner-8.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="deals-countdown-wrap">
+                                        <div class="deals-countdown" data-countdown="2025/02/25 00:00:00"></div>
+                                    </div>
+                                    <div class="deals-content">
+                                        <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
+                                        <div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width: 90%"></div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="product-price">
+                                                <span>32.000</span>
+                                                <span class="old-price">33.000</span>
+                                            </div>
+                                            <div class="add-cart">
+                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--End Deals-->
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock content %}
