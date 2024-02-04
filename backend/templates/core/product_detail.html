@@ -273,8 +273,10 @@
                                                                             <div class="d-flex align-items-center">
                                                                                 <span class="font-xs text-muted">{{review.date}}</span>
                                                                             </div>
-                                                                            <div class="product-rate d-inline-block">
-                                                                                <div class="product-rating" style="width: 100%"></div>
+                                                                            <div>
+                                                                                {% for star in review.rating|ljust:review.rating %}
+                                                                                    <i class="fas fa-star text-warning"></i>
+                                                                                {% endfor %}
                                                                             </div>
                                                                         </div>
                                                                         <p class="mb-10">{{review.review}} </p>
@@ -318,19 +320,33 @@
                                                 </div>
                                             </div>
                                             <!--comment form-->
+                                            {% if request.user.is_authenticated %}
+                                            {% if make_review %}
+                                            
                                             <div class="comment-form">
-                                                <h4 class="mb-15">ارسال نظر</h4>
-                                                <div class="product-rate d-inline-block mb-30"></div>
+                                                <h4 class="mb-15 add-review">ارسال نظر</h4>
+                                                <strong class="text-success" id="review-res"></strong>
+                                                {% comment %} <div class="product-rate d-inline-block mb-30"></div> {% endcomment %}
                                                 <div class="row">
                                                     <div class="col-lg-8 col-md-12">
-                                                        <form class="form-contact comment_form" action="#" id="commentForm">
+                                                        <form class="form-contact comment_form hide-comment-form" action="{% url 'core:ajax_add_review' product.id %}" id="commentForm" method="POST">
+                                                            {% csrf_token %}
                                                             <div class="row">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9" placeholder="پیام شما"></textarea>
+                                                                        {{review_form.review}}
+                                                                        {% comment %} <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9" placeholder="پیام شما"></textarea> {% endcomment %}
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-sm-6">
+
+
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        {{review_form.rating}}
+                                                                        {% comment %} <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9" placeholder="پیام شما"></textarea> {% endcomment %}
+                                                                    </div>
+                                                                </div>
+                                                                {% comment %} <div class="col-sm-6">
                                                                     <div class="form-group">
                                                                         <input class="form-control" name="name" id="name" type="text" placeholder="نام">
                                                                     </div>
@@ -344,7 +360,7 @@
                                                                     <div class="form-group">
                                                                         <input class="form-control" name="website" id="website" type="text" placeholder="سایت">
                                                                     </div>
-                                                                </div>
+                                                                </div> {% endcomment %}
                                                             </div>
                                                             <div class="form-group">
                                                                 <button type="submit" class="button button-contactForm">ارسال</button>
@@ -353,6 +369,8 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {% endif %}
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
