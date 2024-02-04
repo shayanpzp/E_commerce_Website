@@ -28,18 +28,12 @@
                                         <h5 class="mb-30">دسته بندی</h5>
                                         <div class="categories-dropdown-wrap font-heading">
                                             <ul>
+                                                {% for category in categories %}
                                                 <li>
-                                                    <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-1.svg" alt="">شیر و لبنیات</a>
+                                                    <input data-filter="category" class="form-check-input filter-checkbox" type="checkbox" name="checkbox" id="exampleCheckbox2" value="{{category.id}}" />
+                                                    <a href="{% url 'core:category_product_list' category.cid %}"> <img src={{category.image.url}} alt=""> {{category.title}} </a>
                                                 </li>
-                                                <li>
-                                                    <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-2.svg" alt="">لباس و زیبایی</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-3.svg" alt="">غذای حیوانات</a>
-                                                </li>
-                                                <li class="mb-0">
-                                                    <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-4.svg" alt="">مواد پخت</a>
-                                                </li>
+                                                {% endfor %}
                                             </ul>
                                         </div>
                                     </div>
@@ -48,50 +42,18 @@
                                     <div class="card">
                                         <h5 class="mb-30">فروشنده</h5>
                                         <div class="d-flex">
-                                            <div class="custome-checkbox mr-80">
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
-                                                <label class="form-check-label" for="exampleCheckbox1"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="">
-                                                <label class="form-check-label" for="exampleCheckbox2"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="">
-                                                <label class="form-check-label" for="exampleCheckbox3"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox4" value="">
-                                                <label class="form-check-label" for="exampleCheckbox4"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox5" value="">
-                                                <label class="form-check-label" for="exampleCheckbox5"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox6" value="">
-                                                <label class="form-check-label" for="exampleCheckbox6"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox7" value="">
-                                                <label class="form-check-label" for="exampleCheckbox7"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox8" value="">
-                                                <label class="form-check-label" for="exampleCheckbox8"><span>طراحان وب</span></label>
+                                            <div class="customeee-checkbox mr-80">
+
+                                                {% for vendor in vendors %}
+
+                                                <input class="form-check-input filter-checkbox" data-filter="vendor" type="checkbox" name="checkbox" id="exampleCheckbox1" value="{{vendor.id}}">
+                                                <label class="form-check-label" for="exampleCheckbox1"><span> {{vendor.title}}</span></label>
+                                                <br><br>
+                                                
+                                                {% endfor %}
+
                                             </div>
-                                            <div class="custome-checkbox">
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="">
-                                                <label class="form-check-label" for="exampleCheckbox11"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox21" value="">
-                                                <label class="form-check-label" for="exampleCheckbox21"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox31" value="">
-                                                <label class="form-check-label" for="exampleCheckbox31"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox41" value="">
-                                                <label class="form-check-label" for="exampleCheckbox41"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox51" value="">
-                                                <label class="form-check-label" for="exampleCheckbox51"><span>طراحان وب</span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox61" value="">
-                                                <label class="form-check-label" for="exampleCheckbox61"><span>طراحان وب</span></label>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -206,7 +168,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row product-grid">
+                        <div class="row product-grid" id="filtered-product">
 
 
                         {% for product in products %}

@@ -2,6 +2,7 @@ from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, Pr
 
 def default(request):
     categories = Category.objects.all()
+    vendors = Vendor.objects.all()
 
     if request.user.is_authenticated:
         try:
@@ -12,4 +13,5 @@ def default(request):
     return {
         "categories" : categories,
         "address" : address,
+        "vendors" : vendors,
     }
