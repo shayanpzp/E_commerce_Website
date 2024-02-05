@@ -212,7 +212,9 @@ def add_to_cart(request):
     cart_product[str(request.GET['id'])] = {
         'title' : request.GET['title'],
         'qty' : request.GET['qty'],
-        'price' : request.GET['price']
+        'price' : request.GET['price'],
+        'image' : request.GET['image'],
+        'pid' : request.GET['pid'],
     }
     
     

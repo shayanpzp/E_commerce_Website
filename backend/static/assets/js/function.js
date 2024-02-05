@@ -138,21 +138,26 @@ $(document).ready(function (){
 
 
 
-
-
-
 $("#add-to-cart-btn").on("click",function(){
-    let quantity = $("#product-quantity").val()
-    let product_title = $(".product-title").val()
-    let product_id = $(".product-id").val()
-    let prodcut_price = $("#current-product-price").text()
+
     let this_val = $(this)
+    let index = this_val.attr("data-index")
+
+    let quantity = $("#product-quantity-" + index).val()
+    let product_title = $(".product-title-" + index).val()
+    let product_id = $(".product-id-" + index).val()
+    let prodcut_price = $("#current-product-price-" + index).text()
+    let prodcut_pid = $("#product-pid-" + index).val()
+    let prodcut_image = $("#product-image-" + index).val()
+    
 
 
     $.ajax({
         url:'/add-to-cart',
         data: {
             'id' : product_id,
+            'pid' : product_pid,
+            'image' : prodcut_image,
             'qty':quantity,
             'title':product_title,
             'price' : prodcut_price,
@@ -168,3 +173,36 @@ $("#add-to-cart-btn").on("click",function(){
         }
     })
 })
+
+
+
+
+
+
+// $("#add-to-cart-btn").on("click",function(){
+//     let quantity = $("#product-quantity").val()
+//     let product_title = $(".product-title").val()
+//     let product_id = $(".product-id").val()
+//     let prodcut_price = $("#current-product-price").text()
+//     let this_val = $(this)
+
+
+//     $.ajax({
+//         url:'/add-to-cart',
+//         data: {
+//             'id' : product_id,
+//             'qty':quantity,
+//             'title':product_title,
+//             'price' : prodcut_price,
+//         },
+//         dataType:'json',
+//         beforeSend:function(){
+//             console.log("Adding product to cart...");
+//         },
+//         success:function(response){
+//             this_val.html("Item added to cart")
+//             console.log("Added product to cart ! ");
+//             $(".cart-items-count").text(response.totalcartitems)
+//         }
+//     })
+// })

@@ -56,7 +56,7 @@
                                         </div>
                                         <div class="clearfix product-price-cover">
                                             <div class="product-price primary-color float-left">
-                                                <span class="current-price text-brand" id="current-product-price">{{product.price}}</span>
+                                                <span class="current-price text-brand">{{product.price}}</span>
                                                 <span>
                                                     <span class="save-price font-md color3 ml-15">{{product.get_percentage|floatformat:0}}%-</span>
                                                     <span class="old-price font-md ml-15">{{product.old_price}}</span>
@@ -85,9 +85,17 @@
                                             <input type="number" value="1" name="" id="product-quantity" class="w-25 mb-10"
                                             <br>
                                             <div class="product-extra-link2">
-                                                <input type="hidden" value="{{product.id}}" class="product-id" name="" id="">
-                                                <input type="hidden" value="{{product.title}}" class="product-title" name="" id="">
-                                                <button type="submit" class="button button-add-to-cart" id="add-to-cart-btn"><i class="fi-rs-shopping-cart"></i>افزودن به سبدخرید</button>
+                                                {% comment %} <input type="hidden" value="{{product.id}}" class="product-id" name="" id="">
+                                                <input type="hidden" value="{{product.title}}" class="product-title" name="" id=""> {% endcomment %}
+                                                
+                                                <input type="hidden" value="1" id="product-quantity" class="product-quantity-{{product.id}}">
+                                                <input type="hidden" value="{{product.pid}}" class="product-pid-{{product.id}}">
+                                                <input type="hidden" value="{{product.image.url}}" class="product-image-{{product.id}}">
+                                                <input type="hidden" value="{{product.id}}" class="product-id-{{product.id}}">
+                                                <input type="hidden" value="{{product.title}}" class="product-title-{{product.id}}">
+                                                <button class="add add-to-cart-btn" data-index="product.id" style="border:none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i>خرید </button>
+                                            
+                                                <button type="submit" class="button button-add-to-cart add-to-cart-btn" data-index="{{product.id}}" id="add-to-cart-btn"><i class="fi-rs-shopping-cart"></i>افزودن به سبدخرید</button>
                                                 <a aria-label="علاقه مندی" class="action-btn hover-up" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="مقایسه" class="action-btn hover-up" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
                                             </div>
@@ -413,7 +421,7 @@
                                                         <span> </span>
                                                     </div>
                                                     <div class="product-price">
-                                                        <span>{{product.price}} </span>
+                                                        <span class="current-price current-product-price-{{product.id}} text-brand">{{product.price}} </span>
                                                         <span class="old-price">{{product.old_price}}</span>
                                                     </div>
                                                 </div>
