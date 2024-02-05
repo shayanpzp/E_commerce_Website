@@ -240,44 +240,17 @@
                                         <a href="shop-wishlist.html"><span class="lable">علاقه مندی</span></a>
                                     </div>
                                     <div class="header-action-icon-2">
-                                        <a class="mini-cart-icon" href="shop-cart.html">
+                                        <a class="mini-cart-icon" href="{% url 'core:cart' %}">
                                             <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}">
                                             <span class="pro-count blue cart-items-count">{{request.session.cart_data_obj|length}}</span>
                                         </a>
                                         <a href="shop-cart.html"><span class="lable">سبدخرید</span></a>
                                         <div class="cart-dropdown-wrap cart-dropdown-hm2">
-                                            <ul>
-                                                <li>
-                                                    <div class="shopping-cart-img">
-                                                        <a href="shop-product-right.html"><img alt="Nest" src="{% static 'assets/imgs/shop/thumbnail-3.jpg' %}"></a>
-                                                    </div>
-                                                    <div class="shopping-cart-title">
-                                                        <h4><a href="shop-product-right.html">آب پرتقال</a></h4>
-														<h4><span>1 × </span>80.000 تومان</h4>
-													</div>
-													<div class="shopping-cart-delete">
-														<a href="#"><i class="fi-rs-cross-small"></i></a>
-													</div>
-												</li>
-												<li>
-													<div class="shopping-cart-img">
-														<a href="shop-product-right.html"><img alt="Nest" src="{% static 'assets/imgs/shop/thumbnail-2.jpg' %}"></a>
-													</div>
-													<div class="shopping-cart-title">
-														<h4><a href="shop-product-right.html">فلفل دلمه ای</a></h4>
-														<h4><span>1 × </span>32.000 تومان</h4>
-													</div>
-													<div class="shopping-cart-delete">
-														<a href="#"><i class="fi-rs-cross-small"></i></a>
-													</div>
-												</li>
-											</ul>
+                                            
 											<div class="shopping-cart-footer">
-												<div class="shopping-cart-total">
-													<h4>جمع کل: <span>112.000 تومان</span></h4>
-												</div>
+												
 												<div class="shopping-cart-button">
-													<a href="shop-cart.html" class="outline">مشاهده سبد خرید</a>
+													<a href="{% url 'core:cart' %}" class="outline">مشاهده سبد خرید</a>
 													<a href="shop-checkout.html">بررسی مجدد</a>
 												</div>
 											</div>
@@ -520,44 +493,16 @@
                                     </a>
                                 </div>
                                 <div class="header-action-icon-2">
-                                    <a class="mini-cart-icon" href="#">
+                                    <a class="mini-cart-icon" href="{% url "core:cart" %}">
                                         <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}">
                                         <span class="pro-count white cart-items-count">{{request.session.cart_data_obj|length}}</span>
                                     </a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2">
-                                        <ul>
-                                            <li>
-                                                <div class="shopping-cart-img">
-                                                    <a href="shop-product-right.html"><img alt="Nest" src="{% static 'assets/imgs/shop/thumbnail-3.jpg' %}"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="shop-product-right.html">آب پرتقال</a></h4>
-														<h4><span>1 × </span>80.000 تومان</h4>
-													</div>
-													<div class="shopping-cart-delete">
-														<a href="#"><i class="fi-rs-cross-small"></i></a>
-													</div>
-												</li>
-												<li>
-													<div class="shopping-cart-img">
-														<a href="shop-product-right.html"><img alt="Nest" src="{% static 'assets/imgs/shop/thumbnail-2.jpg' %}"></a>
-													</div>
-													<div class="shopping-cart-title">
-														<h4><a href="shop-product-right.html">فلفل دلمه ای</a></h4>
-														<h4><span>1 × </span>32.000 تومان</h4>
-													</div>
-													<div class="shopping-cart-delete">
-														<a href="#"><i class="fi-rs-cross-small"></i></a>
-													</div>
-												</li>
-											</ul>
 											<div class="shopping-cart-footer">
-												<div class="shopping-cart-total">
-													<h4>جمع کل: <span>112.000 تومان</span></h4>
-												</div>
+												
 												<div class="shopping-cart-button">
-													<a href="shop-cart.html" class="outline">مشاهده سبد خرید</a>
-													<a href="shop-checkout.html">بررسی مجدد</a>
+													<a href="{% url 'core:cart' %}" class="outline">مشاهده سبد خرید</a>
+													<a href="">بررسی مجدد</a>
                                             </div>
                                         </div>
                                     </div>
