@@ -93,28 +93,18 @@
                                         <div class="sidebar-widget price_range range">
                                             <div class="price-filter mb-20">
                                                 <div class="price-filter-inner">
-                                                    <div id="slider-range" class="mb-20"></div>
+                                                    {% comment %} <div id="slider-range" class="mb-20"></div> {% endcomment %}
+                                                    <input type="range" name="range" value="{{ min_max_price.price__min|floatformat:2 }}" class="slider-range" id="range" min="{{min_max_price.price__min}}" max="{{min_max_price.price__max}}" oninput="max_price.value=this.value">
                                                     <div class="d-flex justify-content-between">
-                                                        <div class="caption">از: <strong id="slider-range-value1" class="text-brand"></strong></div>
-                                                        <div class="caption">تا: <strong id="slider-range-value2" class="text-brand"></strong></div>
+                                                        <div class="caption">از: <strong id="slider-range-value1" class="text-brand">{{min_max_price.price__min|floatformat:2}}</strong></div>
+                                                        <div class="caption">تا: <strong id="slider-range-value2" class="text-brand">{{min_max_price.price__max|floatformat:2}}</strong></div>
                                                     </div>
+                                                    <input type="number" name="" value="{{ min_max_price.price__min|floatformat:2 }}" id="max_price" min="{{min_max_price.price__min}}" max="{{min_max_price.price__max}}" placeholder="قیمت فعلی" onkeyup="range.value=this.value">
                                                 </div>
                                             </div>
                                             <div class="custome-checkbox">
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox211" value="">
-                                                <label class="form-check-label" for="exampleCheckbox211"><span>0.00 - 20.000 </span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox22" value="">
-                                                <label class="form-check-label" for="exampleCheckbox22"><span>20.000 - 40.000 </span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox23" value="">
-                                                <label class="form-check-label" for="exampleCheckbox23"><span>40.000 - 60.000 </span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox24" value="">
-                                                <label class="form-check-label" for="exampleCheckbox24"><span>60.000 - 80.000 </span></label>
-                                                <br>
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox25" value="">
-                                                <label class="form-check-label" for="exampleCheckbox25"><span>بیشتر از 100.000</span></label>
+                                               <botton class="btn mt-20 w-100">Filter</botton>
+                                               {% comment %} <h3>{{min_max_price}}</h3> {% endcomment %}
                                             </div>
                                         </div>
                                     </div>
