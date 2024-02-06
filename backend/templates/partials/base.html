@@ -181,7 +181,7 @@
                 <div class="container">
                     <div class="header-wrap">
                         <div class="logo logo-width-1">
-                            <a href="index.html"><img src="{% static 'assets/imgs/theme/logo.svg' %}" alt="logo"></a>
+                            <a href="{% url "core:index" %}"><img src="{% static 'assets/imgs/theme/logo.svg' %}" alt="logo"></a>
                         </div>
                         <div class="header-right">
                             <div class="search-style-2">
@@ -244,7 +244,7 @@
                                             <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}">
                                             <span class="pro-count blue cart-items-count">{{request.session.cart_data_obj|length}}</span>
                                         </a>
-                                        <a href="shop-cart.html"><span class="lable">سبدخرید</span></a>
+                                        <a href="{% url "core:cart" %}"><span class="lable">سبدخرید</span></a>
                                         <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                             
 											<div class="shopping-cart-footer">
