@@ -319,4 +319,19 @@ def update_from_cart(request):
                 cart_total_amount += qty * price
     context = render_to_string("core/async/cart-list.html", {"cart_data": request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount': cart_total_amount})
     return JsonResponse({"data":context, 'totalcartitems': len(request.session['cart_data_obj'])})                  
+
+
+
+def checkout_view(request):
+    cart_total_amount = 0
+    
+    if 'cart_data_obj' in request.session:
+        for product_id, item in request.session['cart_data_obj'].items():
+            qty = int(item.get('qty', 0))
+            price_str = item.get('price', '')
             
+            if price_str and price_str.replace('.', '', 1).isdigit():
+                price = float(price_str)
+                cart_total_amount += qty * price
+
+        return render(request, "core/checkout.html", {"cart_data": request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount': cart_total_amount})

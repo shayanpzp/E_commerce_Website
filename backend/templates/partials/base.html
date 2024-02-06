@@ -251,7 +251,7 @@
 												
 												<div class="shopping-cart-button">
 													<a href="{% url 'core:cart' %}" class="outline">مشاهده سبد خرید</a>
-													<a href="shop-checkout.html">بررسی مجدد</a>
+													<a href="{% url "core:checkout" %}">پرداخت</a>
 												</div>
 											</div>
 										</div>
@@ -502,7 +502,7 @@
 												
 												<div class="shopping-cart-button">
 													<a href="{% url 'core:cart' %}" class="outline">مشاهده سبد خرید</a>
-													<a href="">بررسی مجدد</a>
+													<a href="{% url "core:checkout" %}">بررسی مجدد</a>
                                             </div>
                                         </div>
                                     </div>
