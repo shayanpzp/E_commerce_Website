@@ -8,12 +8,12 @@ def default(request):
     vendors = Vendor.objects.all()
     
     min_max_price = Product.objects.aggregate(Min("price"), Max("price"))
-
+    address = None 
     if request.user.is_authenticated:
         try:
             address = Address.objects.get(user=request.user)
         except Address.DoesNotExist:
-            address = None 
+            pass
     
     return {
         "categories" : categories,

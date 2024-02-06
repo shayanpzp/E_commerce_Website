@@ -195,10 +195,10 @@
                                         <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">{{ product.vendor.title }}</a></span>
                                     </div>
                                     <div class="product-card-bottom">
-                                        <div class="product-price">
+                                        {% comment %} <div class="product-price">
                                             <span>{{ product.price }}</span>
                                             <span class="old-price">{{ product.old_price }}</span>
-                                        </div>
+                                        </div> {% endcomment %}
                                         <div class="product-card-bottom">
                                             <div class="product-price">
                                                 <span class="current-product-price-{{product.id}}">{{ product.price }}</span>
