@@ -269,3 +269,28 @@ def cart_view(request):
     else:
         messages.warning(request, "سبد خرید شما خالی می باشد")
         return redirect("core:index")
+
+
+
+def delete_item_from_cart(request):
+    product_id = str(request.GET['id'])
+    if 'cart_data_obj' in request.session:
+        if product_id in request.session['cart_data_obj']:
+            cart_data = request.session['cart_data_obj']
+            del request.session['cart_data_obj'][product_id]
+            request.session['cart_data_obj'] = cart_data
+            
+            
+    cart_total_amount = 0
+    
+    if 'cart_data_obj' in request.session:
+        for product_id, item in request.session['cart_data_obj'].items():
+            qty = int(item.get('qty', 0))
+            price_str = item.get('price', '')
+            
+            if price_str and price_str.replace('.', '', 1).isdigit():
+                price = float(price_str)
+                cart_total_amount += qty * price
+    context = render_to_string("core/async/cart-list.html", {"cart_data": request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount': cart_total_amount})
+    return JsonResponse({"data":context, 'totalcartitems': len(request.session['cart_data_obj'])})                       
+            
