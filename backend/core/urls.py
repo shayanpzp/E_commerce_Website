@@ -1,5 +1,5 @@
 from django.urls import path, include
-from core.views import index, category_list_view, product_list_view, category_product_list__view, vendor_list_view,vendor_detail_view,product_detail_view,tag_list,ajax_add_review,search_view,filter_product,add_to_cart,cart_view,delete_item_from_cart,update_from_cart,checkout_view
+from core.views import index, category_list_view, product_list_view, category_product_list__view, vendor_list_view,vendor_detail_view,product_detail_view,tag_list,ajax_add_review,search_view,filter_product,add_to_cart,cart_view,delete_item_from_cart,update_from_cart,checkout_view,customer_dashboard,order_detail
 
 app_name = "core"
 
@@ -21,5 +21,7 @@ urlpatterns = [
     path("update-cart/",update_from_cart, name="update-cart"),
     path("checkout/",checkout_view, name="checkout"),
     path("paypal/", include('paypal.standard.ipn.urls')),
+    path("dashboard/",customer_dashboard, name="dashboard"),
+    path("dashboard/order/<int:id>/",order_detail, name="order-detail"),
     
 ]

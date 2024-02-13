@@ -8,6 +8,7 @@ from core.forms import ProductReviewForm
 from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def index(request): 
     # products = Product.objects.all().order_by("-id")
@@ -335,3 +336,28 @@ def checkout_view(request):
                 cart_total_amount += qty * price
 
         return render(request, "core/checkout.html", {"cart_data": request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount': cart_total_amount})
+
+
+@login_required
+def customer_dashboard(request):
+    orders = CartOrder.objects.filter(user=request.user).order_by("-id")
+    
+    context = {
+        "orders":orders
+    }
+    
+    return render(request, 'core/dashboard.html', context)
+
+
+
+def order_detail(request, id):
+    order = CartOrder.objects.get(user=request.user, id=id)
+    order_items = CartOrderItems.objects.filter(order=order)
+    
+    context = {
+        "order_items":order_items
+    }
+    
+    return render(request, 'core/order_detail.html', context)
+
+    
