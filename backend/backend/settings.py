@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',   
     'taggit', 
     'ckeditor',
+    'paypal.standard.ipn',
     
     #apps
     'core',
@@ -195,3 +196,8 @@ CKEDITOR_CONFIG = {
         ),
     }
 }
+
+
+
+PAYPAL_RECEIVER_EMAIL = 'shayanpzp1@gmail.com'
+PAYPAL_TEST = True
