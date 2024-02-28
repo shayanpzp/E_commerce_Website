@@ -22,7 +22,7 @@ class VendorAdmin(admin.ModelAdmin):
     list_filter =  ['title' ]
     
 class CartOrderAdmin(admin.ModelAdmin):
-    list_display = ['user', 'price', 'paid_status', 'order_date', 'product_status']
+    list_display = ['price', 'paid_status', 'order_date', 'product_status']
     list_filter =  ['price' , 'paid_status' , 'product_status']
     
 class CartOrderItemsAdmin(admin.ModelAdmin):

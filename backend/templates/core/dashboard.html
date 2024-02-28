@@ -118,38 +118,54 @@
                                         </div>
                                         <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
                                             <div class="row">
+                                                <div>
+                                                    <form class="mb-4" method="POST"> {% csrf_token %}
+                                                        <div class="card-header">
+                                                            <h5>add address</h5>
+                                                        </div>
+                                                        <div class="row">
+                                                        <div class="from-group col-md-6">
+                                                        <input placeholder="address" required="" class="from-control" name="address" type="text" />
+                                                        </div>
+                                                        <div class="from-group col-md-6">
+                                                        <input placeholder="phone" required="" class="from-control" name="phone"/>
+                                                        </div>
+                                                        <div class=" col-md-12">
+                                                        <button type="submit" class="btn btn-fill-out submit font-weight-bold" name="submit" value="Submit">save address</button>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                                <hr>
+                                                <br>
+                                                {% for adrs in address %}
                                                 <div class="col-lg-6">
                                                     <div class="card mb-3 mb-lg-0">
                                                         <div class="card-header">
-                                                            <h3 class="mb-0">آدرس من</h3>
+                                                            <h4 class="mb-0"> {{forloop.counter}}</h4>
                                                         </div>
-                                                        <div class="card-body">
+
+                                                        
+
+
+
+
+                                                        <div class="card-body border rounded">
                                                             <address>
-                                                                ایران<br>
-                                                                استان البرز<br>
-                                                                شهر کرج<br>شاهین ویلا
+
+                                                                <p>{{adrs.address}}</p>
+                                                                <p>{{adrs.mobile}}</p>
+                                                                {% comment %} <p>{{adrs.status}}</p> {% endcomment %}
+
                                                             </address>
-                                                            <p>کرج</p>
-                                                            <a href="#" class="btn-small">ویرایش</a>
+                                                            <button class="btn">Make Default</button>
+                                                            <i class="fa fa-check-circle text-success"></i>
                                                         </div>
+                                                        
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            <h5 class="mb-0">آدرس حمل و نقل</h5>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <address>
-                                                                ایران<br>
-                                                                استان البرز<br>
-                                                                شهر کرج<br>شاهین ویلا
-                                                            </address>
-                                                            <p>کرج</p>
-                                                            <a href="#" class="btn-small">ویرایش</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                {% endfor %} 
+                                                
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">

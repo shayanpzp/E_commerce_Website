@@ -341,9 +341,23 @@ def checkout_view(request):
 @login_required
 def customer_dashboard(request):
     orders = CartOrder.objects.filter(user=request.user).order_by("-id")
+    address = Address.objects.filter(user=request.user)
+    
+    if request.method == "POST":
+        address=request.POST.get("address")
+        mobile=request.POST.get("mobile")
+        
+        new_address = Address.objects.create(
+            user=request.user,
+            address=address,
+            mobile=mobile
+        )
+        messages.success(request, "Address changing successfuly.")
+        return redirect("core:dashboard")
     
     context = {
-        "orders":orders
+        "orders":orders,
+        "address":address
     }
     
     return render(request, 'core/dashboard.html', context)
@@ -356,6 +370,7 @@ def order_detail(request, id):
     
     context = {
         "order_items":order_items
+        
     }
     
     return render(request, 'core/order_detail.html', context)

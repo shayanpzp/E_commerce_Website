@@ -165,7 +165,7 @@ class ProductImage(models.Model):
 
     
 class CartOrder(models.Model):
-    
+    # user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     price = models.DecimalField(max_digits=9999999999999, decimal_places=2, default="1.99")
     paid_status = models.BooleanField(default=False)
     order_date = models.DateField(auto_now_add=True)
@@ -235,6 +235,7 @@ class Wishlist(models.Model):
               
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    mobile = models.CharField(max_length=50, null=True)
     address = models.CharField(max_length=100, null=True)
     status = models.BooleanField(default=False)
     
