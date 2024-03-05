@@ -220,6 +220,32 @@ $(document).ready(function (){
             }
         })
     })
+
+    //makeing default address
+    $(document).on("click",".make-default-address", function(){
+        let id = $(this).attr("data-address-id")
+        let this_val = $(this)
+
+
+        $.ajax({
+            url:"/make-default-address",
+            data : {
+                "id":id
+            },
+            dataType:"json",
+            success:function(response){
+                console.log("Address made default");
+                if (response.boolean == True){
+                    $(".check").hide()
+                    $(".action_btn").show()
+
+                    $(".check" + id).show()
+                    $(".button"+id).hide()
+                }
+            }
+        })
+
+    })
 })
 
 

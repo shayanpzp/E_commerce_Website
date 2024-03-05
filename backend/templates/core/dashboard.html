@@ -155,11 +155,21 @@
 
                                                                 <p>{{adrs.address}}</p>
                                                                 <p>{{adrs.mobile}}</p>
+                                                                <p>{{adrs.id}}</p>
                                                                 {% comment %} <p>{{adrs.status}}</p> {% endcomment %}
 
+                                                                
+
                                                             </address>
-                                                            <button class="btn">Make Default</button>
-                                                            <i class="fa fa-check-circle text-success"></i>
+                                                            <br>
+                                                            {% if adrs.status %}
+                                                                <i data-address-id="{{ adrs.id }}" class="fa fa-check-circle text-success check{{ adrs.id }} check"></i>
+                                                                <button data-address-id="{{ adrs.id }}" style="display:none;" class="btn make-default-address button{{ adrs.id }} action_btn">Make Default</button>
+                                                            {% else %}
+                                                                <i data-address-id="{{ adrs.id }}" class="fa fa-check-circle text-success check check{{ adrs.id }}"></i>
+                                                                <button data-address-id="{{ adrs.id }}" class="btn make-default-address button{{ adrs.id }} action_btn">Make Default</button>
+                                                            {% endif %}
+
                                                         </div>
                                                         
                                                     </div>

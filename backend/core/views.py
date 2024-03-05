@@ -375,4 +375,11 @@ def order_detail(request, id):
     
     return render(request, 'core/order_detail.html', context)
 
-    
+
+
+
+def make_address_default(request):
+    id = request.GET['id']   
+    Address.objects.update(status=False) 
+    Address.objects.filter(id=id).update(status=True)
+    return JsonResponse({"boolean":True})
