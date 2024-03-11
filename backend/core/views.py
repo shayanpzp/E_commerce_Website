@@ -1,4 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
+
+from backend.customer.models import Profile
 from . import serializers
 from . import models
 from taggit.models import Tag
@@ -343,6 +345,8 @@ def customer_dashboard(request):
     orders = CartOrder.objects.filter(user=request.user).order_by("-id")
     address = Address.objects.filter(user=request.user)
     
+
+    
     if request.method == "POST":
         address=request.POST.get("address")
         mobile=request.POST.get("mobile")
@@ -350,13 +354,15 @@ def customer_dashboard(request):
         new_address = Address.objects.create(
             user=request.user,
             address=address,
-            mobile=mobile
+            mobile=mobile,
         )
         messages.success(request, "Address changing successfuly.")
         return redirect("core:dashboard")
     
+    user_profile = Profile.objects.get(user=request.user)
+    
     context = {
-        "orders":orders,
+        "user_profile":user_profile,
         "address":address
     }
     

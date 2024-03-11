@@ -1,10 +1,15 @@
 from django.contrib import admin
-from customer.models import User
+from customer.models import User, Profile
 
 
 
-class USerAdmin(admin.ModelAdmin):
+class UserAdmin(admin.ModelAdmin):
     list_display = ['username', 'email', 'bio']
 
 
-admin.site.register(User, USerAdmin)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display=['full_name', 'bio', 'phone']
+
+
+admin.site.register(User, UserAdmin)
+admin.site.register(Profile, ProfileAdmin)
