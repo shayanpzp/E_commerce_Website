@@ -1,4 +1,7 @@
-from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImage, ProductReview, Wishlist, Address    
+from vendor.models import Vendor
+from product.models import Product
+from category.models import Category
+from core.models import CartOrder, CartOrderItems, Wishlist, Address    
 from django.db.models import Min,Max
 
 

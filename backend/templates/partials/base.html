@@ -3,7 +3,7 @@
 <html lang="fa" dir="rtl" class="rtl">
     <head>
         <meta charset="utf-8">
-        <title>Nest - قالب چندمنظوره فروشگاهی نست</title>
+        <title>WEBAZONE    </title>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,7 @@
         <meta property="og:url" content="">
         <meta property="og:image" content="">
         <!-- Favicon -->
+        
         <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg">
         <!-- Template CSS -->
         <link rel="stylesheet" href="{% static 'assets/css/plugins/slider-range.css' %}">
@@ -115,90 +116,17 @@
             <div class="mobile-promotion">
                 <span> افتتاحیه، <strong>تا 15٪</strong> تخفیف برای همه موارد. فقط <strong>3 روز</strong> باقی مانده</span> 
             </div>
-            <div class="header-top header-top-ptb-1 d-none d-lg-block">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-4">
-                            <div class="header-info">
-                                <ul>
-                                    <li><a href="page-about.htlm">درباره ما</a></li>
-                                    <li><a href="page-account.html">اکانت من</a></li>
-                                    <li><a href="shop-wishlist.html">علاقه مندی</a></li>
-                                    <li><a href="shop-order.html">پیگیری خرید</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-4">
-                            <div class="text-center">
-                                <div id="news-flash" class="d-inline-block">
-                                    <ul>
-                                        <li>تحویل 100% ایمن بدون تماس با پیک</li>
-                                         <li>تخفیفات با ارزش شام - با کوپن ها بیشتر پس انداز کنید</li>
-                                         <li>جواهرات مد روز 25 نقره ای، امروز با 35 درصد تخفیف</li> 
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4">
-                            <div class="header-info header-info-right">
-                                <ul>
-                                    <li>تماس با مرکز پشتیبانی: <strong class="text-brand"> 0261234567</strong></li>
-                                    <li>
-                                        <a class="language-dropdown-active" href="#"><i class="fi-rs-angle-small-down"></i> زبان</a>
-                                        <ul class="language-dropdown">
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme/flag-fr.png' %}" alt="">فرانسوی</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme/flag-dt.png' %}" alt="">آلمانی</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme/flag-ru.png' %}" alt="">پرتغال</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a class="language-dropdown-active" href="#"><i class="fi-rs-angle-small-down"></i> پول</a>
-                                        <ul class="language-dropdown">
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme/flag-fr.png' %}" alt="">فرانسه</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme/flag-dt.png' %}" alt="">آلمان</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme/flag-ru.png' %}" alt="">روسیه</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
                 <div class="container">
                     <div class="header-wrap">
                         <div class="logo logo-width-1">
-                            <a href="{% url "core:index" %}"><img src="{% static 'assets/imgs/theme/logo.svg' %}" alt="logo"></a>
+                            <a href="{% url "core:index" %}" style=""><h1>WEBAZONE</h1></a>
                         </div>
                         <div class="header-right">
                             <div class="search-style-2">
                                 <form action="{% url 'core:search' %}" method="GET">
-                                    <select class="select-active">
-                                        <option>دسته بندی ها</option>
-                                        <option>شیر و لبنیات</option>
-                                        <option>الکل</option>
-                                        <option>پوشاک و زیبایی</option>
-                                        <option>غذا و اسباب بازی حیوانات</option>
-                                        <option>فست فود</option>
-                                        <option>مواد پخت</option>
-                                        <option>سبزیجات</option>
-                                        <option>غذاهای دریایی تازه</option>
-                                        <option>رشته و برنج</option>
-                                        <option>بستنی</option> 
-                                    </select>
+                                    
                                     <input type="text" placeholder="جستجو برای ..." name="q">
                                     <botton class="fas fa-search" type="submit"></button>
                                 </form>
@@ -225,20 +153,20 @@
                                             </select>
                                         </form>
                                     </div>
-                                    <div class="header-action-icon-2">
+                                    {% comment %} <div class="header-action-icon-2">
                                         <a href="shop-compare.html">
                                             <img class="svgInject" alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-compare.svg' %}">
                                             <span class="pro-count blue">3</span>
                                         </a>
                                         <a href="shop-compare.html"><span class="lable ml-0">مقایسه</span></a>
-                                    </div>
-                                    <div class="header-action-icon-2">
+                                    </div> {% endcomment %}
+                                    {% comment %} <div class="header-action-icon-2">
                                         <a href="shop-wishlist.html">
                                             <img class="svgInject" alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-heart.svg' %}">
                                             <span class="pro-count blue">6</span>
                                         </a>
                                         <a href="shop-wishlist.html"><span class="lable">علاقه مندی</span></a>
-                                    </div>
+                                    </div> {% endcomment %}
                                     <div class="header-action-icon-2">
                                         <a class="mini-cart-icon" href="{% url 'core:cart' %}">
                                             <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}">
@@ -263,9 +191,7 @@
 										<a href="page-account.html"><span class="lable ml-0">اکانت من</span></a>
                                         <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                             <ul>
-                                                <li><a href="{% url "core:dashboard" %}"><i class="fi fi-rs-user mr-10"></i>اکانت من</a></li>
-												<li><a href="page-account.html"><i class="fi fi-rs-location-alt mr-10"></i>رهگیری خرید</a></li>
-												<li><a href="page-account.html"><i class="fi fi-rs-label mr-10"></i>تخفیف من</a></li>
+                                                <li><a href="{% url 'core:dashboard' %}"><i class="fi fi-rs-user mr-10"></i>اکانت من</a></li>
 												<li><a href="shop-wishlist.html"><i class="fi fi-rs-heart mr-10"></i>علاقه مندی</a></li>
 												<li><a href="page-account.html"><i class="fi fi-rs-settings-sliders mr-10"></i>تنظیمات</a></li>
 												{% if request.user.is_authenticated %}
@@ -300,9 +226,12 @@
                                         <ul>
                                             {% for category in categories %}
                                             <li>
-                                                <a href="{% url 'core:category_product_list' category.cid %}"> <img src="{{ category.image.url }}" alt="">{{ category.title }}</a>
+                                                <a href="{% url 'core:category_product_list' category.cid %}"> <img src="{% static '{{ category.image.url }}' %}" alt="">{{ category.title }}</a>
                                             </li>
                                             {% endfor %}
+                                            <hr>
+                                            <li><a href="{% url 'core:category_list' %}">همه دسته بندی ها </a></li>
+
                                         </ul>
                                        
                                     </div>
@@ -326,148 +255,33 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">مشاهده بیشتر ...</span></div>
+                                    
                                 </div>
                             </div>
                             <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                                 <nav>
                                     <ul>
-                                        <li class="hot-deals"><img src="{% static 'assets/imgs/theme/icons/icon-hot.svg' %}" alt="hot deals"><a href="shop-grid-right.html">تخفیف ها</a></li>
                                         <li>
-                                            <a class="active" href="index.html">صفحه اصلی <i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="index.html">صفحه اصلی یک</a></li>
-                                                <li><a href="index-2.html">صفحه اصلی دو</a></li>
-                                                <li><a href="index-3.html">صفحه اصلی سه</a></li>
-                                                <li><a href="index-4.html">صفحه اصلی چهار</a></li>
-                                        <li><a href="index-5.html">صفحه اصلی پنج</a></li>
-                                        <li><a href="index-6.html">صفحه اصلی شش</a></li>
-                                            </ul>
+                                            <a class="active" href="{% url 'core:index'  %}">صفحه اصلی <i class=""></i></a>
                                         </li>
-                                        
-                                        <li>
-                                            <a href="shop-grid-right.html">دسته بندی <i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                {% for category in categories %}
-                                                <li><a href="{% url 'core:category_product_list' category.cid %}">{{category.title}}</a></li>
-                                                {% endfor %}
-                                                <hr>
-                                                <li><a href="{% url 'core:category_list' %}">All Categories</a></li>
-                                                
-                                            </ul>
-                                        </li>
+                                          
                                         <li>
                                             <a href="{% url 'core:product_list'  %}"> فروشگاه </a>
                                         </li>
 
-
-                                        
                                         <li>
-                                            <a href="#">فروشندگان <i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="vendors-grid.html">شبکه فروشندگان</a></li>
-                                                <li><a href="vendors-list.html">لیست فروشندگان</a></li>
-                                                <li><a href="vendor-details-1.html">جزئیات فروشندگان 1</a></li>
-                                                <li><a href="vendor-details-2.html">جزئیات فروشندگان 2</a></li>
-                                                <li><a href="vendor-dashboard.html">داشبورد فروشندگان</a></li>
-                                                <li><a href="vendor-guide.html">راهنمای فروشندگان</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="position-static">
-                                            <a href="#">مگا منو <i class="fi-rs-angle-down"></i></a>
-                                            <ul class="mega-menu">
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">سبزی و میوه</a>
-                                                    <ul>
-                                                        <li><a href="shop-product-right.html">گوشت و مرغ</a></li>
-                                                         <li><a href="shop-product-right.html">سبزیجات تازه</a></li>
-                                                         <li><a href="shop-product-right.html">گیاهان و ادویه‌ها</a></li>
-                                                         <li><a href="shop-product-right.html">بریده‌ها و جوانه‌ها</a></li>
-                                                         <li><a href="shop-product-right.html">میوه‌ها و سبزیجات عجیب و غریب</a></li>
-                                                         <li><a href="shop-product-right.html">محصولات بسته بندی شده</a></li> 
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">صبحانه و لبنیات</a>
-                                                    <ul>
-                                                        <li><a href="shop-product-right.html">شیر و شیر طعم دار</a></li>
-                                                        <li><a href="shop-product-right.html">کره و مارگارین</a></li>
-                                                        <li><a href="shop-product-right.html">جایگزین های تخم مرغ</a></li>
-                                                        <li><a href="shop-product-right.html">مارمالاد</a></li>
-                                                        <li><a href="shop-product-right.html">خامه ترش</a></li>
-                                                        <li><a href="shop-product-right.html">پنیر</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">گوشت و غذاهای دریایی</a>
-                                                    <ul>
-                                                        <li><a href="shop-product-right.html">سوسیس صبحانه</a></li>
-                                                        <li><a href="shop-product-right.html">سوسیس شام</a></li>
-                                                        <li><a href="shop-product-right.html">مرغ</a></li>
-                                                        <li><a href="shop-product-right.html">گوشت اغذیه فروشی تکه شده</a></li>
-                                                        <li><a href="shop-product-right.html">فیله های صید وحشی</a></li>
-                                                        <li><a href="shop-product-right.html">خرچنگ و صدف</a></li> 
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-34">
-                                                    <div class="menu-banner-wrap">
-                                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/banner/banner-menu.png' %}" alt="Nest"></a>
-                                                        <div class="menu-banner-content">
-                                                            <h4>تخفیفات داغ</h4>
-                                                            <h3>
-                                                                را از دست ندهید<br>
-                                                                پرطرفدار
-                                                            </h3>
-                                                            <div class="menu-banner-price">
-                                                                <span class="new-price text-success">صرفه جویی تا 50%</span>
-                                                            </div>
-                                                            <div class="menu-banner-btn">
-                                                                <a href="shop-product-right.html">اکنون خرید کنید</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="menu-banner-discount">
-                                                            <h3>
-                                                                <span>25%</span>
-                                                                تخفیف
-                                                            </h3>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                            <a href="{% url 'core:vendor_list'  %}"> فروشندگان </a>
+                                            
                                         </li>
                                         <li>
-                                            <a href="blog-category-grid.html">وبلاگ <i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog-category-grid.html">شبکه دسته بندی وبلاگ</a></li>
-                                                <li><a href="blog-category-list.html">فهرست دسته بندی وبلاگ</a></li>
-                                                <li><a href="blog-category-big.html">دسته وبلاگ بزرگ</a></li>
-                                                <li><a href="blog-category-fullwidth.html">دسته وبلاگ گسترده</a></li>
-                                                <li>
-                                                    <a href="#">پست تکی <i class="fi-rs-angle-right"></i></a>
-                                                    <ul class="level-menu level-menu-modify">
-                                                        <li><a href="blog-post-left.html">ساید بار چپ</a></li>
-                                                        <li><a href="blog-post-right.html">ساید بار راست</a></li>
-                                                        <li><a href="blog-post-fullwidth.html">بدون ساید بار</a></li> 
-                                                    </ul>
-                                                </li>
-                                            </ul>
+                                            {% comment %} <a href="{% url 'core:blog-category-grid'  %}">وبلاگ <i class=""></i></a> {% endcomment %}
                                         </li>
                                         <li>
-                                            <a href="#">صفحات <i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="page-about.html">درباره ما</a></li>
-                                                <li><a href="page-contact.html">تماس با ما</a></li>
-                                                <li><a href="page-account.html">اکانت من</a></li>
-                                                <li><a href="page-login.html">ورود به سیستم</a></li>
-                                                <li><a href="page-register.html">ثبت نام</a></li>
-                                                <li><a href="page-purchase-guide.html">راهنمای خرید</a></li>
-                                                <li><a href="page-privacy-policy.html">حریم خصوصی</a></li>
-                                                <li><a href="page-terms.html">شرایط و ضوابط</a></li>
-                                                <li><a href="page-404.html">صفحه 404</a></li> 
-                                            </ul>
+                                            {% comment %} <a href="{% url 'core:about_us.html'  %}">درباره ما</a> {% endcomment %}
+                                                
                                         </li>
                                         <li>
-                                            <a href="page-contact.html">تماس با ما</a>
+                                            {% comment %} <a href="{% url 'core:contact_us.html'  %}">تماس با ما</a> {% endcomment %}
                                         </li>
                                     </ul>
                                 </nav>
@@ -727,15 +541,12 @@
                                 <div class="newsletter-content">
                                     <h2 class="mb-20">
                                         در خانه بمانید و روزانه <br>
-                                        از فروشگاه طراحان وب خرید کنید
+                                        از فروشگاه  وبازون خرید کنید
                                     </h2>
-                                    <p class="mb-45">خرید روزانه شما با <span class="text-brand">طراحان وب</span></p>
-                                    <form class="form-subcriber d-flex">
-                                        <input type="email" placeholder="ایمیلتان را وارد نمائید">
-                                        <button class="btn" type="submit">اشتراک</button>
-                                    </form>
+                                    <br>
+                                    <p class="mb-45">خرید روزانه شما با <span class="text-brand">WEBAZONE</span></p>
+                                    
                                 </div>
-                                <img src="{% static 'assets/imgs/banner/banner-9.png' %}" alt="newsletter">
                             </div>
                         </div>
                     </div>
@@ -819,8 +630,6 @@
                         <div class="col">
                             <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0">
                                 <div class="logo mb-30">
-                                    <a href="index.html" class="mb-15"><img src="{% static 'assets/imgs/theme/logo.svg' %}" alt="logo"></a>
-                                    <p class="font-lg text-heading">قالب وب سایت فروشگاه مواد غذایی بسیار جذاب</p>
                                 </div>
                                 <ul class="contact-infor">
                                     <li><img src="{% static 'assets/imgs/theme/icons/icon-location.svg' %}" alt=""><strong>آدرس: </strong> <span>تهران -پونک</span></li>
@@ -833,37 +642,11 @@
                         <div class="footer-link-widget col">
                             <h4 class="widget-title">شرکت</h4>
                             <ul class="footer-list mb-sm-5 mb-md-0">
-                                <li><a href="#">درباره ما</a></li>
-                                <li><a href="#">اطلاعات تحویل</a></li>
-                                <li><a href="#">خط مشی رازداری</a></li>
-                                <li><a href="#">شرایط و  ضوابط</a></li>
-                                <li><a href="#">با ما تماس بگیرید</a></li>
-                                <li><a href="#">مرکز پشتیبانی</a></li>
-                                <li><a href="#"> مشاغل</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-link-widget col">
-                            <h4 class="widget-title">حساب</h4>
-                            <ul class="footer-list mb-sm-5 mb-md-0">
-                                <li><a href="#">وارد سیستم شوید</a></li>
-                                <li><a href="#">مشاهده سبد خرید</a></li>
-                                <li><a href="#">لیست علاقه مندی</a></li>
-                                <li><a href="#">پیگیری سفارشد</a></li>
-                                <li><a href="#">راهنما</a></li>
-                                <li><a href="#">جزئیات حمل و نقل</a></li>
-                                <li><a href="#">مقایسه محصولات</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-link-widget col">
-                            <h4 class="widget-title">شرکت</h4>
-                            <ul class="footer-list mb-sm-5 mb-md-0">
-                                <li><a href="#">فروشنده شوید</a></li>
-                                <li><a href="#">برنامه کاری</a></li>
-                                <li><a href="#">کسب و کار</a></li>
-                                <li><a href="#">شغل در شرکت</a></li>
-                                <li><a href="#">تامین کنندگان ما</a></li>
-                                <li><a href="#">دسترسی</a></li>
-                                <li><a href="#">تبلیغات</a></li>
+                                <li><a href="">درباره ما</a></li>
+                                <li><a href="">شرایط و  ضوابط</a></li>
+                                <li><a href="">با ما تماس بگیرید</a></li>
+                                <li><a href="">مرکز پشتیبانی</a></li>
+                                <li><a href=""> مشاغل</a></li>
                             </ul>
                         </div>
                         <div class="footer-link-widget col">
@@ -878,6 +661,17 @@
                                 <li><a href="#">پنیر</a></li>
                             </ul>
                         </div>
+                        <div class="footer-link-widget col">
+                            <h4 class="widget-title">حساب</h4>
+                            <ul class="footer-list mb-sm-5 mb-md-0">
+                                <li><a href="#">وارد سیستم شوید</a></li>
+                                <li><a href="#">مشاهده سبد خرید</a></li>
+                                <li><a href="">لیست علاقه مندی</a></li>
+                                <li><a href="#">راهنما</a></li>
+                            </ul>
+                        </div>
+                        
+                        
                         <div class="footer-link-widget widget-install-app col">
                             <h4 class="widget-title">نصب اپلیکیشن</h4>
                             <p class="wow fadeIn animated">تنها از گوگل پلی و اپ استور</p>
@@ -897,7 +691,7 @@
                         <div class="footer-bottom"></div>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6">
-                        <p class="font-sm mb-0">تمامی حقوق قالب <strong class="text-brand">وبازون</strong> محفوظ است.  <br>خرید قالب از <a href="" target="_blank">وبازون</a></p>
+                        <p class="font-sm mb-0">تمامی حقوق قالب <strong class="text-brand">وبازون</strong> محفوظ است.  <br>   </p>
                     </div>
                     <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
                         <div class="hotline d-lg-inline-flex mr-30">
@@ -911,14 +705,13 @@
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
                         <div class="mobile-social-icon">
-                            <h6>دنبال کنید</h6>
+                            <h6>دنبال کنید:</h6>
                             <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-facebook-white.svg' %}" alt=""></a>
                             <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-twitter-white.svg' %}" alt=""></a>
                             <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-instagram-white.svg' %}" alt=""></a>
                             <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-pinterest-white.svg' %}" alt=""></a>
                             <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-youtube-white.svg' %}" alt=""></a>
                         </div>
-                        <p class="font-sm">تا 15% تخفیف در اولین اشتراک شما</p>
                     </div>
                 </div>
             </div>

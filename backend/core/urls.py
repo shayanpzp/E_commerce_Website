@@ -1,28 +1,37 @@
 from django.urls import path, include
-from core.views import index, category_list_view, product_list_view, category_product_list__view, vendor_list_view,vendor_detail_view,product_detail_view,tag_list,ajax_add_review,search_view,filter_product,add_to_cart,cart_view,delete_item_from_cart,update_from_cart,checkout_view,customer_dashboard,order_detail,make_address_default
+from vendor.views import VendorDetailView, VendorListView
+from product.views import AddReviewView, FilterProductView, ProductDetailView, ProductListView
+
+from category.views import CategoryListView, CategoryProductListView
+from .views import (
+    IndexView, 
+    TagListView, 
+    SearchView, AddToCartView, CartView, 
+    DeleteItemFromCartView, UpdateFromCartView, CheckoutView, 
+    CustomerDashboardView, OrderDetailView, MakeAddressDefaultView,AboutView
+)
 
 app_name = "core"
 
 urlpatterns = [
-    path("", index, name="index"),
-    path("category/", category_list_view, name="category_list"),
-    path("products/", product_list_view, name="product_list"),
-    path("product/<pid>/", product_detail_view, name="product_detail"),
-    path("category/<cid>/", category_product_list__view, name="category_product_list"),
-    path("vendors/", vendor_list_view, name="vendor_list"),
-    path("vendor/<vid>/", vendor_detail_view, name="vendor_detail"),
-    path("products/tag/<slug:tag_slug>/", tag_list, name="tags"),
-    path("ajax_add_review/<int:pid>", ajax_add_review, name="ajax_add_review"),
-    path("search/", search_view, name="search"),
-    path("filter-products/", filter_product, name="filter-product"),
-    path("add-to-cart/", add_to_cart, name="add-to-cart"),
-    path("cart/",cart_view, name="cart"),
-    path("delete-from-cart/",delete_item_from_cart, name="delete-from-cart"),
-    path("update-cart/",update_from_cart, name="update-cart"),
-    path("checkout/",checkout_view, name="checkout"),
+    path("category/", CategoryListView.as_view(), name="category_list"),
+    path("category/<cid>/", CategoryProductListView.as_view(), name="category_product_list"),
+    path("", IndexView.as_view(), name="index"),
+    path("vendors/", VendorListView.as_view(), name="vendor_list"),
+    path("vendor/<vid>/", VendorDetailView.as_view(), name="vendor_detail"),
+    path("search/", SearchView.as_view(), name="search"),
+    path("add-to-cart/", AddToCartView.as_view(), name="add-to-cart"),
+    path("cart/", CartView.as_view(), name="cart"),
+    path("delete-from-cart/", DeleteItemFromCartView.as_view(), name="delete-from-cart"),
+    path("update-cart/", UpdateFromCartView.as_view(), name="update-cart"),
+    path("checkout/", CheckoutView.as_view(), name="checkout"),
     path("paypal/", include('paypal.standard.ipn.urls')),
-    path("dashboard/",customer_dashboard, name="dashboard"),
-    path("dashboard/order/<int:id>/",order_detail, name="order-detail"),
-    path("make-default-address/",make_address_default, name="make-address-default"),
-    
+    path("dashboard/", CustomerDashboardView.as_view(), name="dashboard"),
+    path("dashboard/order/<int:id>/", OrderDetailView.as_view(), name="order-detail"),
+    path("make-default-address/", MakeAddressDefaultView.as_view(), name="make-address-default"),
+    path("products/", ProductListView.as_view(), name="product_list"),
+    path("product/<pid>/", ProductDetailView.as_view(), name="product_detail"),
+    path("ajax_add_review/<int:pid>", AddReviewView.as_view(), name="ajax_add_review"),
+    path("filter-products/", FilterProductView.as_view(), name="filter-product"),
+    path("about/", AboutView.as_view(), name="about-us"),
 ]

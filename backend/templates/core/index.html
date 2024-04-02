@@ -7,30 +7,28 @@
             <section class="home-slider position-relative mb-30">
                 <div class="home-slide-cover">
                     <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
-                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/slider-5.png' %})">
+                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/apple_logo_wide.jpeg' %})">
                             <div class="slider-content">
                                 <h1 class="display-2 mb-40">
-                                    تخفیفات طراحان وب <br>
-                                    را از دست ندهید
+                                    وبازون فروشگاهی متفاوت برای خرید
                                 </h1>
-                                <p class="mb-65">جهت دریافت تخفیف ایمیلتان را وارد کنید</p>
-                                <form class="form-subcriber d-flex">
-                                    <input type="email" placeholder="ایمیل شما">
-                                    <button class="btn" type="submit">اشتراک</button>
-                                </form>
+                                
                             </div>
                         </div>
-                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/slider-6.png' %})">
+                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/iphone_14_pink_purple-wallpaper-2560x1080.jpg' %})">
                             <div class="slider-content">
                                 <h1 class="display-2 mb-40">
-                                    تخفیفات طراحان وب <br>
-                                    را از دست ندهید
+                                   با وبازون همراه شوید <br>
                                 </h1>
-                                <p class="mb-65">جهت دریافت تخفیف ایمیلتان را وارد کنید</p>
-                                <form class="form-subcriber d-flex">
-                                    <input type="email" placeholder="ایمیل شما">
-                                    <button class="btn" type="submit">اشتراک</button>
-                                </form>
+                                
+                            </div>
+                        </div>
+                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/iphone_x_wallpaper_for_mac_os-wallpaper-2400x1350.jpg' %})">
+                            <div class="slider-content">
+                                <h1 class="display-2 mb-40">
+                                    فروشگاهی بر پایه اپل استور   <br>
+                                </h1>
+                                
                             </div>
                         </div>
                     </div>
@@ -43,28 +41,18 @@
                     <div class="col-lg-4-5">
                         <section class="product-tabs section-padding position-relative">
                             <div class="section-title style-2">
-                                <h3>محصولات محبوب</h3>
+                                <h3>محصولات </h3>
                         <ul class="nav nav-tabs links" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">همه</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-tab-two" data-bs-toggle="tab" data-bs-target="#tab-two" type="button" role="tab" aria-controls="tab-two" aria-selected="false">شیر و لبنیات</button>
+                                {% for category in categories %}
+                                    <span>, </span>
+                                    <a href="{% url 'core:category_product_list' category.cid %}"> {{ category.title }}</a>
+                                {% endfor %}
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three" aria-selected="false">قهوه و چای</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-tab-four" data-bs-toggle="tab" data-bs-target="#tab-four" type="button" role="tab" aria-controls="tab-four" aria-selected="false">طراحان وب</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-tab-five" data-bs-toggle="tab" data-bs-target="#tab-five" type="button" role="tab" aria-controls="tab-five" aria-selected="false">گوشت</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-tab-six" data-bs-toggle="tab" data-bs-target="#tab-six" type="button" role="tab" aria-controls="tab-six" aria-selected="false">سبزی</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-tab-seven" data-bs-toggle="tab" data-bs-target="#tab-seven" type="button" role="tab" aria-controls="tab-seven" aria-selected="false">میوه</button>
+
                                     </li>
                                 </ul>
                             </div>
@@ -2798,198 +2786,29 @@
                             <!--End tab-content-->
                         </section>
                         <!--Products Tabs-->
-                        <section class="section-padding pb-5">
-                            <div class="section-title">
-                        <h3 class="">معاملات روز</h3>
-                                <a class="show-all" href="shop-grid-right.html">
-                                    <i class="fi-rs-angle-right"></i>
-                            تمامی معاملات
-                                </a>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-3 col-lg-4 col-md-6">
-                                    <div class="product-cart-wrap style-2">
-                                        <div class="product-img-action-wrap">
-                                            <div class="product-img">
-                                                <a href="shop-product-right.html">
-                                                    <img src="{% static 'assets/imgs/banner/banner-5.png' %}" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content-wrap">
-                                            <div class="deals-countdown-wrap">
-                                                <div class="deals-countdown" data-countdown="2025/03/25 00:00:00"></div>
-                                            </div>
-                                            <div class="deals-content">
-                                                <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div>
-                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
-                                        </div>
-                                        <div class="product-card-bottom">
-                                            <div class="product-price">
-                                                <span>32.000</span>
-                                                <span class="old-price">33.000</span>
-                                            </div>
-                                            <div class="add-cart">
-                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6">
-                                    <div class="product-cart-wrap style-2">
-                                        <div class="product-img-action-wrap">
-                                            <div class="product-img">
-                                                <a href="shop-product-right.html">
-                                                    <img src="{% static 'assets/imgs/banner/banner-6.png' %}" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content-wrap">
-                                            <div class="deals-countdown-wrap">
-                                                <div class="deals-countdown" data-countdown="2026/04/25 00:00:00"></div>
-                                            </div>
-                                            <div class="deals-content">
-                                                <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div>
-                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
-                                        </div>
-                                        <div class="product-card-bottom">
-                                            <div class="product-price">
-                                                <span>32.000</span>
-                                                <span class="old-price">33.000</span>
-                                            </div>
-                                            <div class="add-cart">
-                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 d-none d-lg-block">
-                                    <div class="product-cart-wrap style-2">
-                                        <div class="product-img-action-wrap">
-                                            <div class="product-img">
-                                                <a href="shop-product-right.html">
-                                                    <img src="{% static 'assets/imgs/banner/banner-7.png' %}" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content-wrap">
-                                            <div class="deals-countdown-wrap">
-                                                <div class="deals-countdown" data-countdown="2027/03/25 00:00:00"></div>
-                                            </div>
-                                            <div class="deals-content">
-                                                <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div>
-                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
-                                        </div>
-                                        <div class="product-card-bottom">
-                                            <div class="product-price">
-                                                <span>32.000</span>
-                                                <span class="old-price">33.000</span>
-                                            </div>
-                                            <div class="add-cart">
-                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 d-none d-xl-block">
-                                    <div class="product-cart-wrap style-2">
-                                        <div class="product-img-action-wrap">
-                                            <div class="product-img">
-                                                <a href="shop-product-right.html">
-                                                    <img src="{% static 'assets/imgs/banner/banner-8.png' %}" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content-wrap">
-                                            <div class="deals-countdown-wrap">
-                                                <div class="deals-countdown" data-countdown="2025/02/25 00:00:00"></div>
-                                            </div>
-                                            <div class="deals-content">
-                                                <h2><a href="shop-product-right.html">محصول طراحان وب</a></h2>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div>
-                                            <span class="font-small text-muted">توسط: <a href="vendor-details-1.html">طراحان وب</a></span>
-                                        </div>
-                                        <div class="product-card-bottom">
-                                            <div class="product-price">
-                                                <span>32.000</span>
-                                                <span class="old-price">33.000</span>
-                                            </div>
-                                            <div class="add-cart">
-                                                <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>خرید </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        
                         <!--End Deals-->
                         <section class="banners">
                             <div class="row">
                                 <div class="col-lg-4 col-md-6">
                                     <div class="banner-img">
-                                        <img src="{% static 'assets/imgs/banner/banner-1.png' %}" alt="">
-                                        <div class="banner-text">
-                                            <h4>
-                                                 هر روز تازه و  <br>تمیز با ما<br>
-                                                محصولات
-                                            </h4>
-                                            <a href="shop-grid-right.html" class="btn btn-xs">خرید <i class="fi-rs-arrow-small-left"></i></a>
+                                        <img src="{% static 'assets/imgs/banner/new-iphone-every-year-980x516.jpg' %}" alt="">
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="banner-img">
-                                        <img src="{% static 'assets/imgs/banner/banner-2.png' %}" alt="">
+                                        <img src="{% static 'assets/imgs/banner/مک_۳.jpg' %}" alt="">
+                                        
                                         <div class="banner-text">
-                                            <h4>
-                                                صبحانه خود را سالم<br>
-                                                و آسان کنید 
-                                            </h4>
-                                            <a href="shop-grid-right.html" class="btn btn-xs">خرید <i class="fi-rs-arrow-small-left"></i></a>
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 d-md-none d-lg-flex">
                                     <div class="banner-img mb-sm-0">
-                                        <img src="{% static 'assets/imgs/banner/banner-3.png' %}" alt="">
+                                        <img src="{% static 'assets/imgs/banner/main-3.jpg' %}" alt="">
+                                        
                                         <div class="banner-text">
-                                            <h4>بهترین محصولات ارگانیک  <br>آنلاین</h4>
-                                            <a href="shop-grid-right.html" class="btn btn-xs">خرید <i class="fi-rs-arrow-small-left"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -2998,88 +2817,30 @@
                         <!--End banners-->
                     </div>
                     <div class="col-lg-1-5 primary-sidebar sticky-sidebar pt-30">
-                        <div class="sidebar-widget widget-category-2 mb-30">
-                            <h5 class="section-title style-1 mb-30">دسته بندی</h5>
-                            <ul>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-1.svg' %}" alt="">شیر و لبنیات</a><span class="count">30</span>
-                                </li>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-2.svg' %}" alt="">پوشاک و زیبایی</a><span class="count">35</span>
-                                </li>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-3.svg' %}" alt="">غذا و اسباب بازی حیوانات</a><span class="count">42</span>
-                                </li>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-4.svg' %}" alt="">مواد پخت</a><span class="count">68</span>
-                                </li>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-5.svg' %}" alt="">میوه تازه</a><span class="count">87</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Fillter By Price -->
-                        <div class="sidebar-widget price_range range mb-30">
-                            <h5 class="section-title style-1 mb-30">فیلتر با قیمت</h5>
-                            <div class="price-filter">
-                                <div class="price-filter-inner">
-                                    <div id="slider-range" class="mb-20"></div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="caption">از: <strong id="slider-range-value1" class="text-brand"></strong></div>
-                                        <div class="caption">تا: <strong id="slider-range-value2" class="text-brand"></strong></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="list-group">
-                                <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900">رنگ</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
-                                        <label class="form-check-label" for="exampleCheckbox1"><span>قرمز (56)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="">
-                                        <label class="form-check-label" for="exampleCheckbox2"><span>سبز (78)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="">
-                                        <label class="form-check-label" for="exampleCheckbox3"><span>آبی (54)</span></label>
-                                    </div>
-                                    <label class="fw-900 mt-15">آیتم ها</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="">
-                                        <label class="form-check-label" for="exampleCheckbox11"><span>جدید (1506)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox21" value="">
-                                        <label class="form-check-label" for="exampleCheckbox21"><span>تعمیر شده (27)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox31" value="">
-                                        <label class="form-check-label" for="exampleCheckbox31"><span>استفاده شده (45)</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="shop-grid-right.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> فیلتر</a>
-                        </div>
+                        
+                        
                         <!-- Product sidebar Widget -->
                         <div class="sidebar-widget product-sidebar mb-30 p-30 bg-grey border-radius-10">
                             <h5 class="section-title style-1 mb-30">محصولات جدید</h5>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/thumbnail-3.jpg' %}" alt="#">
+                                    <img src="{% static 'assets/imgs/shop/download_5.jpeg' %}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h5><a href="shop-product-detail.html">آب پرتقال</a></h5>
+                                    <h5><a href="shop-product-detail.html"> کابل شارژر Type-c</a></h5>
                                     <p class="price mb-0 mt-5">99.000 تومان</p>
                                     <div class="product-rate">
-                                        <div class="product-rating" style="width: 90%"></div>
+                                        <div class="product-rating" style="width: 83%"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/thumbnail-4.jpg' %}" alt="#">
+                                    <img src="{% static 'assets/imgs/shop/vision-pro-gallery-measure-hero-202401_PF1_FMT_WHH.jpeg' %}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h6><a href="shop-product-detail.html">موز</a></h6>
-                                    <p class="price mb-0 mt-5">89.000 تومان</p>
+                                    <h6><a href="shop-product-detail.html">apple vision pro</a></h6>
+                                    <p class="price mb-0 mt-5">234,000,000 تومان</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width: 80%"></div>
                                     </div>
@@ -3087,400 +2848,56 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/thumbnail-5.jpg' %}" alt="#">
+                                    <img src="{% static 'assets/imgs/shop/3470520-200x200.png' %}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h6><a href="shop-product-detail.html">هندوانه</a></h6>
-                                    <p class="price mb-0 mt-5">25.000 تومان</p>
+                                    <h6><a href="shop-product-detail.html">Air Tag</a></h6>
+                                    <p class="price mb-0 mt-5">1,080,000 تومان</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width: 60%"></div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="single-post clearfix">
+                                <div class="image">
+                                    <img src="{% static 'assets/imgs/shop/MT223.png' %}" alt="#">
+                                </div>
+                                <div class="content pt-10">
+                                    <h6><a href="shop-product-detail.html">کیس مگنتی ایفون</a></h6>
+                                    <p class="price mb-0 mt-5">620,000 تومان</p>
+                                    <div class="product-rate">
+                                        <div class="product-rating" style="width: 10%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-post clearfix">
+                                <div class="image">
+                                    <img src="{% static 'assets/imgs/shop/magic_mouse.jpeg' %}" alt="#">
+                                </div>
+                                <div class="content pt-10">
+                                    <h6><a href="shop-product-detail.html">magic mouse</a></h6>
+                                    <p class="price mb-0 mt-5">4,870,000 تومان</p>
+                                    <div class="product-rate">
+                                        <div class="product-rating" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="banner-img wow fadeIn mb-lg-0 animated d-lg-block d-none">
-                            <img src="{% static 'assets/imgs/banner/banner-11.png' %}" alt="">
+                            <img src="{% static 'assets/imgs/banner/appleTitle.jpg' %}" alt="">
                             <div class="banner-text">
-                                <span>ارگانیک</span>
+                                <span></span>
                                 <h4>
-                                    تخفیف 17 % <br>
-                                    برای <span class="text-brand">محصولات</span><br>
-                                    ارگانیک
+                                     
                                 </h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <section class="popular-categories section-padding">
-                <div class="container">
-                    <div class="section-title">
-                        <div class="title">
-                            <h3>فروشگاه با دسته بندی</h3>
-                            <a class="show-all" href="shop-grid-right.html">
-                                تمام دسته بندی ها
-                                <i class="fi-rs-angle-left"></i>
-                            </a>
-                        </div>
-                        <div class="slider-arrow slider-arrow-2 flex-right carausel-8-columns-arrow" id="carausel-8-columns-arrows"></div>
-                    </div>
-                    <div class="carausel-8-columns-cover position-relative">
-                        <div class="carausel-8-columns" id="carausel-8-columns">
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-1.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html">شیر و <br>لبنیات</a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-2.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html"> الکل       </a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-3.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html">پوشاک و <br>زیبایی</a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-4.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html">غذاهای حیوانات <br>خانگی</a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-5.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html"><br>فست فود</a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-6.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html">مواد <br>پخت</a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-7.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html">سبزیجات <br>و میوه</a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-8.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html"><br>غذاهای دریایی</a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-9.svg' %}" alt=""></a>
-                                </figure>
-                                <h6>
-                                    <a href="shop-grid-right.html">نودل <br>برنج</a>
-                                </h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-10.svg' %}" alt=""></a>
-                                </figure>
-                                <h6><a href="shop-grid-right.html">فست فود</a></h6>
-                            </div>
-                            <div class="card-1">
-                                <figure class="img-hover-scale overflow-hidden">
-                                    <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-11.svg' %}" alt=""></a>
-                                </figure>
-                                <h6><a href="shop-grid-right.html">بستنی</a></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
             <!--End category slider-->
-            <section class="section-padding mb-30">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0">
-                            <h4 class="section-title style-1 mb-30 animated animated">برترین فروش</h4>
-                            <div class="product-list-small animated animated">
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-1.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-2.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-3.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-md-0 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
-                            <h4 class="section-title style-1 mb-30 animated animated">محصولات پرطرفدار</h4>
-                            <div class="product-list-small animated animated">
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-4.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-5.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-6.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
-                            <h4 class="section-title style-1 mb-30 animated animated">به تازگی اضافه شده</h4>
-                            <div class="product-list-small animated animated">
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-7.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-8.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-9.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-xl-block wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
-                            <h4 class="section-title style-1 mb-30 animated animated">دارای رتبه برتر</h4>
-                            <div class="product-list-small animated animated">
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-10.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-11.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="row align-items-center hover-up">
-                                    <figure class="col-md-4 mb-0">
-                                        <a href="shop-product-right.html"><img src="{% static 'assets/imgs/shop/thumbnail-12.jpg' %}" alt=""></a>
-                                    </figure>
-                                    <div class="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="shop-product-right.html">محصول طراحان وب</a>
-                                        </h6>
-                                        <div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>32.000</span>
-                                            <span class="old-price">33.000</span>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
             <!--End 4 columns-->
         </main>
 
