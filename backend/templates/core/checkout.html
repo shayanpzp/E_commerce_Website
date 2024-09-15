@@ -93,10 +93,10 @@
                             </div>
                             <div class="form-group">
                                 <div class="checkbox">
-                                    <div class="custome-checkbox">
+                                    {% comment %} <div class="custome-checkbox">
                                         <input class="form-check-input" type="checkbox" name="checkbox" id="createaccount">
                                         <label class="form-check-label label_info" data-bs-toggle="collapse" href="#collapsePassword" data-target="#collapsePassword" aria-controls="collapsePassword" for="createaccount"><span>ساخت اکانت</span></label>
-                                    </div>
+                                    </div> {% endcomment %}
                                 </div>
                             </div>
                             <div id="collapsePassword" class="form-group create-account collapse in">
@@ -161,10 +161,8 @@
                             </div>
                         </div>
                         <div class="payment-logo d-flex">
-                            <img class="mr-15" src="{% static 'assets/imgs/theme/icons/payment-paypal.svg' %}" alt="">
-                            <img class="mr-15" src="{% static 'assets/imgs/theme/icons/payment-visa.svg' %}" alt="">
-                            <img class="mr-15" src="{% static 'assets/imgs/theme/icons/payment-master.svg' %}" alt="">
-                            <img src="{% static 'assets/imgs/theme/icons/payment-zapper.svg' %}" alt="">
+                            <a href=""><img class="wow fadeIn animated" src="{% static 'assets/imgs/theme/zarinpal.png' %}" alt=""></a>
+                            
                         </div>
                         <a href="#" class="btn btn-fill-out btn-block mt-30">ثبت سفارش<i class="fi-rs-sign-out ml-15"></i></a>
                     </div>

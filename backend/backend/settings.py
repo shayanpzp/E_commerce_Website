@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'taggit', 
     'ckeditor',
     'paypal.standard.ipn',
+    'jazzmin',
     
     #apps
     'core',
@@ -153,10 +154,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 JAZZMIN_SETTINGS = {
-    'site_header' : "WEBAZONE",
-    'site_brand' : "You order, we deliver",
-    'site_logo' : "assets/imgs/theme/loading.gif",
-    'copyright' : "WEBAZON.com",
+    'site_header' : "Quiz Online",
+    'site_brand' : "Ace the test, beat the rest!",
+    'site_logo' : "",
+    'copyright' : "Quiz_online.com",
 }
 
 

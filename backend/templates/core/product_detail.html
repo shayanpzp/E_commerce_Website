@@ -96,8 +96,8 @@
                                                 {% comment %} <button class="add add-to-cart-btn" data-index="product.id" style="border:none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i>خرید </button> {% endcomment %}
                                             
                                                 <button type="submit" class="button button-add-to-cart add-to-cart-btn" data-index="{{product.id}}" id="add-to-cart-btn"><i class="fi-rs-shopping-cart"></i>افزودن به سبدخرید</button>
-                                                <a aria-label="علاقه مندی" class="action-btn hover-up" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="مقایسه" class="action-btn hover-up" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                {% comment %} <a aria-label="علاقه مندی" class="action-btn hover-up" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                <a aria-label="مقایسه" class="action-btn hover-up" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a> {% endcomment %}
                                             </div>
                                         </div>
                                         <div class="font-xs">
@@ -122,9 +122,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link فعال" id="Description-tab" data-bs-toggle="tab" href="#Description">شرح</a>
                                          </li>
-                                         <li class="nav-item">
+                                         {% comment %} <li class="nav-item">
                                              <a class="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info">اطلاعات اضافی</a>
-                                         </li>
+                                         </li> {% endcomment %}
                                          <li class="nav-item">
                                              <a class="nav-link" id="Vendor-info-tab" data-bs-toggle="tab" href="#Vendor-info">فروشنده</a>
                                          </li>
@@ -432,190 +432,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 primary-sidebar sticky-sidebar mt-30">
-                                <div class="sidebar-widget widget-delivery mb-30 bg-grey-9 box-shadow-none">
-                                    <h5 class="section-title style-3 mb-20">تحویل</h5>
-                                    <ul>
-                                        <li>
-                                            <i class="fi fi-rs-marker mr-10 text-brand"></i>
-                                            <span>
-                                                <p>
-                                                    {{address.address}}
-                                                </p>
-                                            </span>
-                                            <a href="#" class="change float-end">تغییر</a>
-                                        </li>
-                                        <li class="hr"><span></span></li>
-                                    </ul>
-                                    <h5 class="section-title style-3 mb-20">بازگشت و گارانتی</h5>
-                                    <ul>
-                                        <li>
-                                            <i class="fi fi-rs-shield-check mr-10 text-brand"></i>
-                                            <span> {{product.vendor.authentic_rating}}% معتبر </span>
-                                         </li>
-                                         <li>
-                                             <i class="fi fi-rs-time-forward-ten mr-10 text-brand"></i>
-                                             <span> {{product.vendor.days_return}} روز بازگشت </span>
-                                         </li>
-                                         <li>warranty_period
-                                             <i class="fi fi-rs-diploma mr-10 text-brand"></i>
-                                             <span> {{product.vendor.warranty_period}} ماه گارانتی </span> 
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="sidebar-widget widget-vendor mb-30 bg-grey-9 box-shadow-none">
-                                    <h5 class="section-title style-3 mb-20">فروشنده</h5>
-                                    <div class="vendor-logo d-flex mb-30">
-                                        <img src="{{product.vendor.image.url}}" alt="">
-                                        <div class="vendor-name ml-15">
-                                            <h6>
-                                                <a href="vendor-details-2.html"> {{product.vendor.title}}</a>
-                                            </h6>
-                                            <div class="product-rate-cover text-end">
-                                                <div class="product-rate d-inline-block">
-                                                    <div class="product-rating" style="width: 90%"></div>
-                                                </div>
-                                                <span class="font-small ml-5 text-muted"> (32 امتیاز)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ul class="contact-infor">
-                                        <li><img src="{% static 'assets/imgs/theme/icons/icon-location.svg' %}" alt=""><strong>آدرس: </strong> <span>{{product.vendor.address}}  </span></li>
-                                        <li><img src="{% static 'assets/imgs/theme/icons/icon-contact.svg' %}" alt=""><strong>تماس:</strong><span>{{product.vendor.contact}}</span></li>
-                                        <li class="hr"><span></span></li>
-                                    </ul>
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            <p class="text-brand font-xs">امتیاز</p>
-                                            <h4 class="mb-0">92%</h4>
-                                        </div>
-                                        <div>
-                                            <p class="text-brand font-xs">ارسال به موقع</p>
-                                            <h4 class="mb-0">{{product.vendor.shipping_on_time}}%</h4>
-                                        </div>
-                                        <div>
-                                            <p class="text-brand font-xs">پشتیبانی</p>
-                                            <h4 class="mb-0">{{product.vendor.chat_resp_time}}%</h4>
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li class="hr"><span></span></li>
-                                    </ul>
-                                    <p>فروشنده هستید ؟ <a href="page-register.html"> ثبت نام کنید</a></p>
-                                </div>
-                                <div class="sidebar-widget widget-category-2 mb-30">
-                                    <h5 class="section-title style-1 mb-30">دسته بندی</h5>
-                            <ul>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-1.svg' %}" alt="">شیر و لبنیات</a><span class=" count">30</span>
-                                </li>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-2.svg' %}" alt="">لباس</a><span class="count" >35</span>
-                                </li>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-3.svg' %}" alt="">غذاهای حیوانات خانگی </a><span class="count ">42</span>
-                                </li>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-4.svg' %}" alt="">مواد پخت</a><span class="count ">68</span>
-                                </li>
-                                <li>
-                                    <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-5.svg' %}" alt="">میوه تازه</a><span class="count ">87</span> 
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Fillter By Price -->
-                        <div class="sidebar-widget price_range range mb-30">
-                            <h5 class="section-title style-1 mb-30">فیلتر با قیمت</h5>
-                            <div class="price-filter">
-                                <div class="price-filter-inner">
-                                    <div id="slider-range" class="mb-20"></div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="caption">از: <strong id="slider-range-value1" class="text-brand"></strong></div>
-                                        <div class="caption">تا: <strong id="slider-range-value2" class="text-brand"></strong></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="list-group">
-                                <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900">رنگ</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
-                                        <label class="form-check-label" for="exampleCheckbox1"><span>قرمز (56)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="">
-                                        <label class="form-check-label" for="exampleCheckbox2"><span>سبز (78)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="">
-                                        <label class="form-check-label" for="exampleCheckbox3"><span>آبی (54)</span></label>
-                                    </div>
-                                    <label class="fw-900 mt-15">آیتم ها</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="">
-                                        <label class="form-check-label" for="exampleCheckbox11"><span>جدید (1506)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox21" value="">
-                                        <label class="form-check-label" for="exampleCheckbox21"><span>تعمیر شده (27)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox31" value="">
-                                        <label class="form-check-label" for="exampleCheckbox31"><span>استفاده شده (45)</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="shop-grid-right.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> فیلتر</a>
-                        </div>
-                        <!-- Product sidebar Widget -->
-                        <div class="sidebar-widget product-sidebar mb-30 p-30 bg-grey border-radius-10">
-                            <h5 class="section-title style-1 mb-30">محصولات جدید</h5>
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/thumbnail-3.jpg' %}" alt="#">
-                                </div>
-                                <div class="content pt-10">
-                                    <h5><a href="shop-product-detail.html">آب پرتقال</a></h5>
-                                    <p class="price mb-0 mt-5">99.000 تومان</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/thumbnail-4.jpg' %}" alt="#">
-                                </div>
-                                <div class="content pt-10">
-                                    <h6><a href="shop-product-detail.html">موز</a></h6>
-                                    <p class="price mb-0 mt-5">89.000 تومان</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width: 80%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/thumbnail-5.jpg' %}" alt="#">
-                                </div>
-                                <div class="content pt-10">
-                                    <h6><a href="shop-product-detail.html">هندوانه</a></h6>
-                                    <p class="price mb-0 mt-5">25.000 تومان</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width: 60%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="banner-img wow fadeIn mb-lg-0 animated d-lg-block d-none">
-                            <img src="{% static 'assets/imgs/banner/banner-11.png' %}" alt="">
-                            <div class="banner-text">
-                                <span>ارگانیک</span>
-                                <h4>
-                                    تخفیف 17 % <br>
-                                    برای <span class="text-brand">محصولات</span><br>
-                                    ارگانیک
-                                </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>

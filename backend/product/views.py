@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from .forms import ProductReviewForm
 from .models import Product, Category, ProductReview
+from django.db.models import Avg 
+from .models import Product, ProductReview 
 
 
 class ProductListView(TemplateView):
@@ -26,7 +28,7 @@ class ProductDetailView(TemplateView):
         product = get_object_or_404(Product, pid=self.kwargs['pid'])
         products = Product.objects.filter(category=product.category).exclude(pid=self.kwargs['pid'])
         reviews = ProductReview.objects.filter(product=product).order_by("-date")
-        average_rating = ProductReview.objects.filter(product=product).aggregate(rating=avg('rating'))
+        average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))  # Fixed here
         product_image = product.product_images.all()
         review_form = ProductReviewForm()
         make_review = True

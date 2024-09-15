@@ -7,26 +7,26 @@
             <section class="home-slider position-relative mb-30">
                 <div class="home-slide-cover">
                     <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
-                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/apple_logo_wide.jpeg' %})">
+                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/vira_medical_logo.WEBP' %})">
                             <div class="slider-content">
                                 <h1 class="display-2 mb-40">
-                                    وبازون فروشگاهی متفاوت برای خرید
+                                    ویرا درمان فروشگاهی متفاوت برای خرید
                                 </h1>
                                 
                             </div>
                         </div>
-                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/iphone_14_pink_purple-wallpaper-2560x1080.jpg' %})">
+                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/background_banner_1.jpg' %})">
                             <div class="slider-content">
                                 <h1 class="display-2 mb-40">
-                                   با وبازون همراه شوید <br>
+                                    <span style="color:white;">با ویرا درمان همراه شوید </span><br>
                                 </h1>
                                 
                             </div>
                         </div>
-                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/iphone_x_wallpaper_for_mac_os-wallpaper-2400x1350.jpg' %})">
+                        <div class="single-hero-slider rectangle single-animation-wrap" style="background-image: url({% static 'assets/imgs/slider/background_banner_2.jpg' %})">
                             <div class="slider-content">
                                 <h1 class="display-2 mb-40">
-                                    فروشگاهی بر پایه اپل استور   <br>
+                                    فروشگاهی بر پایه تجهیزات پزشکی   <br>
                                 </h1>
                                 
                             </div>
@@ -72,8 +72,8 @@
                                                         </a>
                                                     </div>
                                                     <div class="product-action-1">
-                                                        <a aria-label="علاقه مندی" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                        <a aria-label="مقایسه" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                        {% comment %} <a aria-label="علاقه مندی" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                        <a aria-label="مقایسه" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a> {% endcomment %}
                                                         <a href="{% url 'core:product_detail' product.pid %}" class="action-btn"><i class="fi-rs-eye"></i></a>
                                                     </div>
                                                     <div class="product-badges product-badges-position product-badges-mrg">
@@ -2792,12 +2792,12 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-6">
                                     <div class="banner-img">
-                                        <img src="{% static 'assets/imgs/banner/new-iphone-every-year-980x516.jpg' %}" alt="">
+                                        <img src="{% static 'assets/imgs/banner/banner_1.webp' %}" alt="">
                                         </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="banner-img">
-                                        <img src="{% static 'assets/imgs/banner/مک_۳.jpg' %}" alt="">
+                                        <img src="{% static 'assets/imgs/banner/banner_2.webp' %}" alt="">
                                         
                                         <div class="banner-text">
                                             
@@ -2806,7 +2806,7 @@
                                 </div>
                                 <div class="col-lg-4 d-md-none d-lg-flex">
                                     <div class="banner-img mb-sm-0">
-                                        <img src="{% static 'assets/imgs/banner/main-3.jpg' %}" alt="">
+                                        <img src="{% static 'assets/imgs/banner/banner_3.webp' %}" alt="">
                                         
                                         <div class="banner-text">
                                         </div>
@@ -2824,10 +2824,10 @@
                             <h5 class="section-title style-1 mb-30">محصولات جدید</h5>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/download_5.jpeg' %}" alt="#">
+                                    <img src="{% static 'assets/imgs/shop/side_1.webp' %}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h5><a href="shop-product-detail.html"> کابل شارژر Type-c</a></h5>
+                                    <h5><a href="shop-product-detail.html"> جوراب امبولی</a></h5>
                                     <p class="price mb-0 mt-5">99.000 تومان</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width: 83%"></div>
@@ -2836,10 +2836,10 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/vision-pro-gallery-measure-hero-202401_PF1_FMT_WHH.jpeg' %}" alt="#">
+                                    <img src="{% static 'assets/imgs/shop/side_2.webp' %}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h6><a href="shop-product-detail.html">apple vision pro</a></h6>
+                                    <h6><a href="shop-product-detail.html">دستکش لاتکس</a></h6>
                                     <p class="price mb-0 mt-5">234,000,000 تومان</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width: 80%"></div>
@@ -2848,10 +2848,10 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/3470520-200x200.png' %}" alt="#">
+                                    <img src="{% static 'assets/imgs/shop/side_3.webp' %}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h6><a href="shop-product-detail.html">Air Tag</a></h6>
+                                    <h6><a href="shop-product-detail.html">سرنگ</a></h6>
                                     <p class="price mb-0 mt-5">1,080,000 تومان</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width: 60%"></div>
@@ -2860,10 +2860,10 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/MT223.png' %}" alt="#">
+                                    <img src="{% static 'assets/imgs/shop/side_4.webp' %}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h6><a href="shop-product-detail.html">کیس مگنتی ایفون</a></h6>
+                                    <h6><a href="shop-product-detail.html">پالس اکسیمتر</a></h6>
                                     <p class="price mb-0 mt-5">620,000 تومان</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width: 10%"></div>
@@ -2872,10 +2872,10 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{% static 'assets/imgs/shop/magic_mouse.jpeg' %}" alt="#">
+                                    <img src="{% static 'assets/imgs/shop/side_5.webp' %}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h6><a href="shop-product-detail.html">magic mouse</a></h6>
+                                    <h6><a href="shop-product-detail.html">دستگاه فشار خون</a></h6>
                                     <p class="price mb-0 mt-5">4,870,000 تومان</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width: 75%"></div>
@@ -2884,7 +2884,7 @@
                             </div>
                         </div>
                         <div class="banner-img wow fadeIn mb-lg-0 animated d-lg-block d-none">
-                            <img src="{% static 'assets/imgs/banner/appleTitle.jpg' %}" alt="">
+                            <img src="{% static 'assets/imgs/banner/banner_side.webp' %}" alt="">
                             <div class="banner-text">
                                 <span></span>
                                 <h4>

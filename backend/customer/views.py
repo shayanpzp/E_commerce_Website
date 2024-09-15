@@ -25,9 +25,7 @@ class RegisterApi(APIView):
             serializer = UserSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
-                print("11111111")
                 send_otp_via_email(serializer.data['email'])
-                print("22222222")
                 return Response({
                     'status' : 200,
                     'message' : 'success & check email',

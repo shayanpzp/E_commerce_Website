@@ -181,9 +181,20 @@ class CustomerDashboardView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        
+        # Get user orders and address
         orders = CartOrder.objects.filter(user=self.request.user).order_by("-id")
         address = Address.objects.filter(user=self.request.user)
-        user_profile = Profile.objects.get(user=self.request.user)
+        
+        # Try to get user profile, if it does not exist handle it
+        try:
+            user_profile = Profile.objects.get(user=self.request.user)
+        except Profile.DoesNotExist:
+            # Redirect to a profile creation page or handle this scenario
+            # For example, create a profile if it doesn't exist:
+            user_profile = Profile.objects.create(user=self.request.user)
+        
+        # Add data to context
         context["user_profile"] = user_profile
         context["address"] = address
         context["orders"] = orders
@@ -212,4 +223,4 @@ class AboutView(TemplateView):
     
     
 class ContactView(TemplateView):
-    template_name = "core/contact_us.html"
+    template_name = "core/contact.html"

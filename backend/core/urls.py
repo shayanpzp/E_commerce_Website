@@ -8,7 +8,7 @@ from .views import (
     TagListView, 
     SearchView, AddToCartView, CartView, 
     DeleteItemFromCartView, UpdateFromCartView, CheckoutView, 
-    CustomerDashboardView, OrderDetailView, MakeAddressDefaultView,AboutView
+    CustomerDashboardView, OrderDetailView, MakeAddressDefaultView,AboutView,ContactView
 )
 
 app_name = "core"
@@ -34,4 +34,6 @@ urlpatterns = [
     path("ajax_add_review/<int:pid>", AddReviewView.as_view(), name="ajax_add_review"),
     path("filter-products/", FilterProductView.as_view(), name="filter-product"),
     path("about/", AboutView.as_view(), name="about-us"),
+    path("contact-us/", ContactView.as_view(), name="contact-us"),
+    
 ]
